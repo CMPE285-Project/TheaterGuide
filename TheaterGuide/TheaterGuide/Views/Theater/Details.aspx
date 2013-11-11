@@ -19,31 +19,38 @@
         </div>
 
         <div class="display-label">
-            <%: Html.DisplayNameFor(model => model.Adress) %>
+            <%: Html.DisplayNameFor(model => model.Address) %>
         </div>
         <div class="display-field">
-            <%: Html.DisplayFor(model => model.Adress) %>
+            <%: Html.DisplayFor(model => model.Address) %>
         </div>
 
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.State) %>
+        <div class="display-label">
+            <%: Html.DisplayNameFor(model => model.City) %>
         </div>
-        <div class="editor-field">
+        <div class="display-field">
+            <%: Html.DisplayFor(model => model.City) %>
+        </div>
+
+        <div class="display-label">
+            <%: Html.DisplayNameFor(model => model.State) %>
+        </div>
+        <div class="display-field">
             <%: Html.DisplayFor(model => model.State) %>
         </div>
 
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Zip) %>
+        <div class="display-label">
+            <%: Html.DisplayNameFor(model => model.Zip) %>
         </div>
-        <div class="editor-field">
+        <div class="display-field">
             <%: Html.DisplayFor(model => model.Zip) %>
         </div>
 
         <div class="display-label">
-            <%: Html.DisplayNameFor(model => model.Phones) %>
+            <%: Html.DisplayNameFor(model => model.Phone) %>
         </div>
         <div class="display-field">
-            <%: Html.DisplayFor(model => model.Phones) %>
+            <%: Html.DisplayFor(model => model.Phone) %>
         </div>
 
         <div class="display-label">

@@ -170,9 +170,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201311071743416_Initial.cs" />
-    <Compile Include="Migrations\201311071743416_Initial.Designer.cs">
-      <DependentUpon>201311071743416_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201311110031099_initial.cs" />
+    <Compile Include="Migrations\201311110031099_initial.Designer.cs">
+      <DependentUpon>201311110031099_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201311110056396_change_field_name.cs" />
+    <Compile Include="Migrations\201311110056396_change_field_name.Designer.cs">
+      <DependentUpon>201311110056396_change_field_name.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -331,8 +335,11 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201311071743416_Initial.resx">
-      <DependentUpon>201311071743416_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201311110031099_initial.resx">
+      <DependentUpon>201311110031099_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311110056396_change_field_name.resx">
+      <DependentUpon>201311110056396_change_field_name.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -22,14 +22,14 @@ namespace TheaterGuide.Controllers
         {
             List<SelectListItem> lst = new List<SelectListItem>();
             var theaters = from m in db.Theaters
-                           orderby m.Name, m.Adress
+                           orderby m.Name, m.Address
                            select m;
 
             foreach (var t in theaters)
             {
                 lst.Add(new SelectListItem()
                 {
-                    Text = t.Name + "@" + t.Adress,
+                    Text = t.Name + "@" + t.Address,
                     Value = t.TheaterId.ToString()
                 });
             }

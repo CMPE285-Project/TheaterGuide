@@ -23,11 +23,19 @@
         </div>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.Adress) %>
+            <%: Html.LabelFor(model => model.Address) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.Adress) %>
-            <%: Html.ValidationMessageFor(model => model.Adress) %>
+            <%: Html.EditorFor(model => model.Address) %>
+            <%: Html.ValidationMessageFor(model => model.Address) %>
+        </div>
+
+        <div class="editor-label">
+            <%: Html.LabelFor(model => model.City) %>
+        </div>
+        <div class="editor-field">
+            <%: Html.EditorFor(model => model.City) %>
+            <%: Html.ValidationMessageFor(model => model.City) %>
         </div>
 
         <div class="editor-label">
@@ -47,11 +55,11 @@
         </div>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.Phones) %>
+            <%: Html.LabelFor(model => model.Phone) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.Phones) %>
-            <%: Html.ValidationMessageFor(model => model.Phones) %>
+            <%: Html.EditorFor(model => model.Phone) %>
+            <%: Html.ValidationMessageFor(model => model.Phone) %>
         </div>
 
         <div class="editor-label">

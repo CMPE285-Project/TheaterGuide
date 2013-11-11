@@ -46,6 +46,7 @@
 \\psf\Home\Documents\SJSU\Project\Visual Studio\TheaterGuide\TheaterGuide\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
 \\psf\Home\Documents\SJSU\Project\Visual Studio\TheaterGuide\TheaterGuide\obj\Debug\TheaterGuide.dll
 \\psf\Home\Documents\SJSU\Project\Visual Studio\TheaterGuide\TheaterGuide\obj\Debug\TheaterGuide.pdb
-\\psf\Home\Documents\SJSU\Project\Visual Studio\TheaterGuide\TheaterGuide\obj\Debug\TheaterGuide.Migrations.Initial.resources
-\\psf\Home\Documents\SJSU\Project\Visual Studio\TheaterGuide\TheaterGuide\obj\Debug\TheaterGuide.csproj.GenerateResource.Cache
 \\psf\Home\Documents\SJSU\Project\Visual Studio\TheaterGuide\TheaterGuide\obj\Debug\TheaterGuide.csprojResolveAssemblyReference.cache
+\\psf\Home\Documents\SJSU\Project\Visual Studio\TheaterGuide\TheaterGuide\obj\Debug\TheaterGuide.Migrations.initial.resources
+\\psf\Home\Documents\SJSU\Project\Visual Studio\TheaterGuide\TheaterGuide\obj\Debug\TheaterGuide.csproj.GenerateResource.Cache
+\\psf\Home\Documents\SJSU\Project\Visual Studio\TheaterGuide\TheaterGuide\obj\Debug\TheaterGuide.Migrations.change_field_name.resources

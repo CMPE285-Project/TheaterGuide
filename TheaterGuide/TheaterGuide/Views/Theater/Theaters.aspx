@@ -25,7 +25,10 @@
             <%: Html.DisplayNameFor(model => model.Name) %>
         </th>
         <th>
-            <%: Html.DisplayNameFor(model => model.Adress) %>
+            <%: Html.DisplayNameFor(model => model.Address) %>
+        </th>
+        <th>
+            <%: Html.DisplayNameFor(model => model.City) %>
         </th>
         <th>
             <%: Html.DisplayNameFor(model => model.State) %>
@@ -34,7 +37,7 @@
             <%: Html.DisplayNameFor(model => model.Zip) %>
         </th>
         <th>
-            <%: Html.DisplayNameFor(model => model.Phones) %>
+            <%: Html.DisplayNameFor(model => model.Phone) %>
         </th>
         <th>
             <%: Html.DisplayNameFor(model => model.Hours) %>
@@ -54,7 +57,10 @@
             <%: Html.DisplayFor(modelItem => item.Name) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.Adress) %>
+            <%: Html.DisplayFor(modelItem => item.Address) %>
+        </td>
+         <td>
+            <%: Html.DisplayFor(modelItem => item.City) %>
         </td>
          <td>
             <%: Html.DisplayFor(modelItem => item.State) %>
@@ -63,7 +69,7 @@
             <%: Html.DisplayFor(modelItem => item.Zip) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.Phones) %>
+            <%: Html.DisplayFor(modelItem => item.Phone) %>
         </td>
         <td>
             <%: Html.DisplayFor(modelItem => item.Hours) %>
