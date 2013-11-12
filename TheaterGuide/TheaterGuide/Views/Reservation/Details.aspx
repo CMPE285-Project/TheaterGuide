@@ -19,10 +19,22 @@
     </div>
 
     <div class="display-label">
-        <%: Html.DisplayNameFor(model => model.MovieId) %>
+        <%: Html.DisplayNameFor(model => model.MovieName) %>
     </div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.MovieId) %>
+        <%: Html.DisplayFor(model => model.MovieName) %>
+    </div>
+    <div class="display-label">
+        <%: Html.DisplayNameFor(model => model.TheaterName) %>
+    </div>
+    <div class="display-field">
+        <%: Html.DisplayFor(model => model.TheaterName) %>
+    </div>
+    <div class="display-label">
+        <%: Html.DisplayNameFor(model => model.Address) %>
+    </div>
+    <div class="display-field">
+        <%: Html.DisplayFor(model => model.Address) %>
     </div>
 
     <div class="display-label">
@@ -38,7 +50,12 @@
     <div class="display-field">
         <%: Html.DisplayFor(model => model.TotalPaied) %>
     </div>
-
+    <div class="display-label">
+        <%: Html.DisplayNameFor(model => model.Email) %>
+    </div>
+    <div class="display-field">
+        <%: Html.DisplayFor(model => model.Email) %>
+    </div>
     <div class="display-label">
         <%: Html.DisplayNameFor(model => model.SubmitDate) %>
     </div>
@@ -62,8 +79,7 @@
 </fieldset>
 <p>
 
-    <%: Html.ActionLink("Cancel", "Cancel", new { id=Model.ReserveId }) %> |
-    <%: Html.ActionLink("Back to Reservation Management", "Reservations") %>
+    <%: Html.ActionLink("Cancel", "Cancel", new { id=Model.ReserveId }) %>
 </p>
 
 </asp:Content>

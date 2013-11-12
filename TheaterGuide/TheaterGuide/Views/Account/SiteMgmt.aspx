@@ -11,6 +11,7 @@
         <ul style="font-size:medium">
             <li><%: Html.ActionLink("Theater", "Theaters", "Theater") %></li>
             <li><%: Html.ActionLink("Movie", "Movies", "Movie") %></li>
+            <li><%: Html.ActionLink("Show", "Shows", "Show") %></li>
             <li><%: Html.ActionLink("Reservation", "Reservations", "Reservation") %></li>
         </ul>
     </div>

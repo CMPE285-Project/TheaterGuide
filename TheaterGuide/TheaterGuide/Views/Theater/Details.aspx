@@ -73,12 +73,14 @@
         <div class="display-field">
             <%: Html.DisplayFor(model => model.Rating) %>
         </div>
+        <div class="display-label">
+            <%: Html.DisplayNameFor(model => model.WebSite) %>
+        </div>
+        <div class="display-field">
+            <%: Html.DisplayFor(model => model.WebSite) %>
+        </div>
     </fieldset>
-    <p>
-
-        <%: Html.ActionLink("Edit", "Edit", new { id=Model.TheaterId }) %> |
-    <%: Html.ActionLink("Back to Theater Information Management", "Theaters") %>
-    </p>
+   
 
 </asp:Content>
 

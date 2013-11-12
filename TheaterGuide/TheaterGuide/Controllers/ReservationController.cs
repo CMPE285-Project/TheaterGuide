@@ -56,12 +56,12 @@ namespace TheaterGuide.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            ReservationModels reservationmodels = db.Reservations.Find(id);
-            if (reservationmodels == null)
+            ReservationModels rm = db.Reservations.Find(id);
+            if (rm == null)
             {
                 return HttpNotFound();
             }
-            return View(reservationmodels);
+            return View(rm);
         }
 
         //
@@ -71,33 +71,44 @@ namespace TheaterGuide.Controllers
         {
             ViewBag.ReturnUrl = Url.Action("Create", new { id, seats});
 
-            MovieModels movie = db.Movies.Find(id);
-            double TotalPrice = movie.Price * seats * movie.Discount;
+            ShowModels show = db.Shows.Find(id);
+            MovieModels movie = db.Movies.Find(show.MovieId);
+            TheaterModels theater = db.Theaters.Find(show.TheaterId);
+
+            double TotalPrice = show.Price * seats * show.Discount;
 
             ReservationModels model = new ReservationModels();
-            model.MovieId = movie.MovieId;
+            model.UserId = WebSecurity.GetUserId(User.Identity.Name);
+            model.ShowId = id;
+            model.MovieName = movie.Name;
+            model.TheaterName = theater.Name;
+            model.Address = theater.address();
+            model.BeginTime = show.BeginTime;
+            model.Date = show.Date;
             model.NumberOfSeats = seats;
             model.TotalPaied = TotalPrice;
-            model.SubmitDate = DateTime.Today;
-            model.SubmitTime = DateTime.Now.TimeOfDay.ToString();
-            model.UserId = WebSecurity.GetUserId(User.Identity.Name);
-            model.Status = "V";
+            model.Email = db.UserProfiles.Find(model.UserId).Email;
 
             return View(model);
         }
 
         [HttpPost]
-        public ActionResult Create(ReservationModels reservationmodels)
+        public ActionResult Create(ReservationModels reserve)
         {
             ViewBag.Success = false;
-            if (ModelState.IsValid)
+
+            reserve.SubmitDate = DateTime.Today;
+            reserve.SubmitTime = DateTime.Now.TimeOfDay.ToString();
+            reserve.Status = "V";
+            try
             {
-                db.Reservations.Add(reservationmodels);
+                db.Reservations.Add(reserve);
                 db.SaveChanges();
                 ViewBag.Success = true;
             }
+            catch (Exception ex) { }
 
-            return View("ReservationSave", reservationmodels);
+            return View("ReservationSave", reserve);
         }
 
         //

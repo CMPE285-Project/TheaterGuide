@@ -110,7 +110,7 @@ namespace TheaterGuide.Controllers
             var localUser = db.UserProfiles.Find(WebSecurity.GetUserId(User.Identity.Name));
             return View(localUser);
         }
-
+/*
         //
         // POST: /Account/Disassociate
 
@@ -139,7 +139,7 @@ namespace TheaterGuide.Controllers
 
             return RedirectToAction("Manage", new { Message = message });
         }
-
+*/
         // Get
         public PartialViewResult ChangePassword()
         {

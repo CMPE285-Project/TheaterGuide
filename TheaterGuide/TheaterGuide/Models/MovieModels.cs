@@ -13,49 +13,53 @@ namespace TheaterGuide.Models
     {
         public MovieModels()
         {
-            this.TheaterId = 1;
             this.Rating = 0;
         }
 
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int MovieId { get; set; }
-        public int TheaterId { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
         public string Director { get; set; }
         public string Description { get; set; }
         [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:d}")]
+        [Display(Name = "Release Date")]
+        public DateTime ReleaseDate { get; set; }
+        [Required]
+        [Display(Name = "RunTime(mins)")]
+        public int RunTime { get; set; }
+        [Required]       
+        [RegularExpression("[0-5]", ErrorMessage = "Rating should be within 0 to 5.")]
+        public int Rating { get; set; }
+      
+        public List<ShowModels> Shows { get; set; }
+    }
+
+/*
+    public class MovieViewModel
+    {
+        [Required]
+        public int MovieId { get; set; }
+        [Required]
+        [Display(Name="Movie")]
+        public string Name { get; set; }
+        [Required]
         [DisplayFormat(DataFormatString = "{0:C}")]
         public double Price { get; set; }
         [Required]
+        [Display(Name = "Begin Time")]
         public string BeginTime { get; set; }
         [Required]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime Date { get; set; }
-        [Required]
-        public int RunTime { get; set; }
-        [Required]
-        public int TotalVolume { get; set; }
-        [Required]
+        [Display(Name = "Available Seat")]
         public int AvailableSeat { get; set; }
-        public double Discount { get; set; }
-        [RegularExpression("[0-5]", ErrorMessage = "Rating should be within 0 to 5.")]
-        public int Rating { get; set; }
-
-        public List<ReservationModels> Reservations { get; set; }
-    }
-/*
-    public class MovieContext : DbContext
-    {
-        public MovieContext()
-            : base("DefaultConnection")
-        {
-        }
-
-        public DbSet<MovieModels> Movies { get; set; }
+        public double Discount { get; set; }       
     }
  */
 }

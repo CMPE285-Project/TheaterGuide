@@ -18,7 +18,7 @@ namespace TheaterGuide.Controllers
     {
         private UsersContext db = new UsersContext();
 
-        public ActionResult Theaters(string searchString=null)
+        private IQueryable<TheaterModels> search(string searchString = null)
         {
             var theaters = from m in db.Theaters
                            select m;
@@ -28,7 +28,19 @@ namespace TheaterGuide.Controllers
                 theaters = theaters.Where(s => s.Name.Contains(searchString));
             }
 
-            return View(theaters);
+            return theaters;
+        }
+
+        // search by admin
+        public ActionResult Theaters(string searchString=null)
+        {
+            return View(search(searchString));
+        }
+
+        // search by customers
+        public ActionResult SearchTheaters(string searchString = null)
+        {
+            return View(search(searchString));
         }
 
         //

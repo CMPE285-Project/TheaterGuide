@@ -49,4 +49,4 @@
 \\psf\Home\Documents\SJSU\Project\Visual Studio\TheaterGuide\TheaterGuide\obj\Debug\TheaterGuide.csprojResolveAssemblyReference.cache
 \\psf\Home\Documents\SJSU\Project\Visual Studio\TheaterGuide\TheaterGuide\obj\Debug\TheaterGuide.Migrations.initial.resources
 \\psf\Home\Documents\SJSU\Project\Visual Studio\TheaterGuide\TheaterGuide\obj\Debug\TheaterGuide.csproj.GenerateResource.Cache
-\\psf\Home\Documents\SJSU\Project\Visual Studio\TheaterGuide\TheaterGuide\obj\Debug\TheaterGuide.Migrations.change_field_name.resources
+\\psf\Home\Documents\SJSU\Project\Visual Studio\TheaterGuide\TheaterGuide\obj\Debug\TheaterGuide.Migrations.add_field.resources

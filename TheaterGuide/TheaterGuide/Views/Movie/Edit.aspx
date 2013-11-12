@@ -15,15 +15,6 @@
         <legend>MovieModels</legend>
 
         <%: Html.HiddenFor(model => model.MovieId) %>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.TheaterId) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.TheaterId) %>
-            <%: Html.ValidationMessageFor(model => model.TheaterId) %>
-        </div>
-
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Name) %>
         </div>
@@ -47,29 +38,12 @@
             <%: Html.EditorFor(model => model.Description) %>
             <%: Html.ValidationMessageFor(model => model.Description) %>
         </div>
-
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.Price) %>
+            <%: Html.LabelFor(model => model.ReleaseDate) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.Price) %>
-            <%: Html.ValidationMessageFor(model => model.Price) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.BeginTime) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.BeginTime) %>
-            <%: Html.ValidationMessageFor(model => model.BeginTime) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Date) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.Date) %>
-            <%: Html.ValidationMessageFor(model => model.Date) %>
+            <%: Html.EditorFor(model => model.ReleaseDate) %>
+            <%: Html.ValidationMessageFor(model => model.ReleaseDate) %>
         </div>
 
         <div class="editor-label">
@@ -79,31 +53,6 @@
             <%: Html.EditorFor(model => model.RunTime) %>
             <%: Html.ValidationMessageFor(model => model.RunTime) %>
         </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.TotalVolume) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.TotalVolume) %>
-            <%: Html.ValidationMessageFor(model => model.TotalVolume) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.AvailableSeat) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.AvailableSeat) %>
-            <%: Html.ValidationMessageFor(model => model.AvailableSeat) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Discount) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.Discount) %>
-            <%: Html.ValidationMessageFor(model => model.Discount) %>
-        </div>
-
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Rating) %>
         </div>

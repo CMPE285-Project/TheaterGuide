@@ -10,8 +10,8 @@ namespace TheaterGuide.Controllers
     {
         public ActionResult Index()
         {
-            MovieController mc = new MovieController();
-            ViewBag.TheaterLst = mc.GetDropDown();
+            ShowController sc = new ShowController();
+            ViewBag.TheaterLst = sc.GetTheaterLst();
 
             return View();
         }

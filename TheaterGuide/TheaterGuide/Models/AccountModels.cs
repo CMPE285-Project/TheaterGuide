@@ -19,7 +19,8 @@ namespace TheaterGuide.Models
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<ReservationModels> Reservations { get; set; }
         public DbSet<TheaterModels> Theaters { get; set; }
-        public DbSet<MovieModels> Movies { get; set; } 
+        public DbSet<MovieModels> Movies { get; set; }
+        public DbSet<ShowModels> Shows { get; set; }
 
     }
 

@@ -13,13 +13,6 @@
     <legend>MovieModels</legend>
 
     <div class="display-label">
-        <%: Html.DisplayNameFor(model => model.TheaterId) %>
-    </div>
-    <div class="display-field">
-        <%: Html.DisplayFor(model => model.TheaterId) %>
-    </div>
-
-    <div class="display-label">
         <%: Html.DisplayNameFor(model => model.Name) %>
     </div>
     <div class="display-field">
@@ -41,24 +34,10 @@
     </div>
 
     <div class="display-label">
-        <%: Html.DisplayNameFor(model => model.Price) %>
+        <%: Html.DisplayNameFor(model => model.ReleaseDate) %>
     </div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.Price) %>
-    </div>
-
-    <div class="display-label">
-        <%: Html.DisplayNameFor(model => model.BeginTime) %>
-    </div>
-    <div class="display-field">
-        <%: Html.DisplayFor(model => model.BeginTime) %>
-    </div>
-
-    <div class="display-label">
-        <%: Html.DisplayNameFor(model => model.Date) %>
-    </div>
-    <div class="display-field">
-        <%: Html.DisplayFor(model => model.Date) %>
+        <%: Html.DisplayFor(model => model.ReleaseDate) %>
     </div>
 
     <div class="display-label">
@@ -66,29 +45,7 @@
     </div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.RunTime) %>
-    </div>
-
-    <div class="display-label">
-        <%: Html.DisplayNameFor(model => model.TotalVolume) %>
-    </div>
-    <div class="display-field">
-        <%: Html.DisplayFor(model => model.TotalVolume) %>
-    </div>
-
-    <div class="display-label">
-        <%: Html.DisplayNameFor(model => model.AvailableSeat) %>
-    </div>
-    <div class="display-field">
-        <%: Html.DisplayFor(model => model.AvailableSeat) %>
-    </div>
-
-    <div class="display-label">
-        <%: Html.DisplayNameFor(model => model.Discount) %>
-    </div>
-    <div class="display-field">
-        <%: Html.DisplayFor(model => model.Discount) %>
-    </div>
-
+    </div>      
     <div class="display-label">
         <%: Html.DisplayNameFor(model => model.Rating) %>
     </div>

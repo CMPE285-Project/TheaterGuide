@@ -1,25 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<TheaterGuide.Models.TheaterModels>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Theater
+    SearchTheaters
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>Theater Information Management</h2>
-
-    <p>
-        <%: Html.ActionLink("Create New", "Create") %>
-    </p>
-
-    <% using (Html.BeginForm("Theaters", "Theater", FormMethod.Get))
+    <h2>Theaters Search</h2>
+     <% using (Html.BeginForm())
        { %>
-    <p>
-        Theater Name: 
+    <p> Theater Name: 
         <%: Html.TextBox("SearchString") %>
     </p>
     <input type="submit" value="Search" />
-    <% } %>
+<% } %>
 
     <table>
         <tr>
@@ -31,12 +25,6 @@
             </th>
             <th>
                 <%: Html.DisplayNameFor(model => model.City) %>
-            </th>
-            <th>
-                <%: Html.DisplayNameFor(model => model.State) %>
-            </th>
-            <th>
-                <%: Html.DisplayNameFor(model => model.Zip) %>
             </th>
             <th>
                 <%: Html.DisplayNameFor(model => model.Phone) %>
@@ -69,12 +57,6 @@
                 <%: Html.DisplayFor(modelItem => item.City) %>
             </td>
             <td>
-                <%: Html.DisplayFor(modelItem => item.State) %>
-            </td>
-            <td>
-                <%: Html.DisplayFor(modelItem => item.Zip) %>
-            </td>
-            <td>
                 <%: Html.DisplayFor(modelItem => item.Phone) %>
             </td>
             <td>
@@ -90,18 +72,16 @@
                 <%: Html.DisplayFor(modelItem => item.WebSite) %>
             </td>
             <td>
-                <%: Html.ActionLink("Edit", "Edit", new { id=item.TheaterId }) %> |
-            <%: Html.ActionLink("Details", "Details", new { id=item.TheaterId }) %> |
-            <%: Html.ActionLink("Delete", "Delete", new { id=item.TheaterId }) %> 
+                <%: Html.ActionLink("Details", "Details", new { id=item.TheaterId }) %> |
+                <%: Html.ActionLink("Movie Shows",  "SearchResult", "Show", new { theaterId=item.TheaterId }, null) %>
             </td>
         </tr>
         <% } %>
     </table>
-    <br />
-    <div>
-        <%: Html.ActionLink("Back to Site Management", "SiteMgmt", "Account") %>
-    </div>
 
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="IndexContent" runat="server">
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="ScriptsSection" runat="server">

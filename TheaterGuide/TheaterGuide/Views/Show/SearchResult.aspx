@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<TheaterGuide.Models.MovieModels>>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<TheaterGuide.Models.SearchViewModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Search Result
@@ -10,17 +10,15 @@
 
     <table>
         <tr>
+            
             <th>
-                <%: Html.DisplayNameFor(model => model.TheaterId) %>
+                <%: Html.DisplayNameFor(model => model.MovieName) %>
             </th>
             <th>
-                <%: Html.DisplayNameFor(model => model.Name) %>
+                <%: Html.DisplayNameFor(model => model.TheaterName) %>
             </th>
             <th>
-                <%: Html.DisplayNameFor(model => model.Director) %>
-            </th>
-            <th>
-                <%: Html.DisplayNameFor(model => model.Description) %>
+                <%: Html.DisplayNameFor(model => model.Address) %>
             </th>
             <th>
                 <%: Html.DisplayNameFor(model => model.Price) %>
@@ -32,19 +30,10 @@
                 <%: Html.DisplayNameFor(model => model.Date) %>
             </th>
             <th>
-                <%: Html.DisplayNameFor(model => model.RunTime) %>
-            </th>
-            <th>
-                <%: Html.DisplayNameFor(model => model.TotalVolume) %>
-            </th>
-            <th>
                 <%: Html.DisplayNameFor(model => model.AvailableSeat) %>
             </th>
             <th>
                 <%: Html.DisplayNameFor(model => model.Discount) %>
-            </th>
-            <th>
-                <%: Html.DisplayNameFor(model => model.Rating) %>
             </th>
             <th></th>
         </tr>
@@ -53,16 +42,13 @@
            { %>
         <tr>
             <td>
-                <%: Html.DisplayFor(modelItem => item.TheaterId) %>
+                <%: Html.DisplayFor(modelItem => item.MovieName) %>
             </td>
             <td>
-                <%: Html.DisplayFor(modelItem => item.Name) %>
+                <%: Html.DisplayFor(modelItem => item.TheaterName) %>
             </td>
             <td>
-                <%: Html.DisplayFor(modelItem => item.Director) %>
-            </td>
-            <td>
-                <%: Html.DisplayFor(modelItem => item.Description) %>
+                <%: Html.DisplayFor(modelItem => item.Address) %>
             </td>
             <td>
                 <%: Html.DisplayFor(modelItem => item.Price) %>
@@ -74,22 +60,13 @@
                 <%: Html.DisplayFor(modelItem => item.Date) %>
             </td>
             <td>
-                <%: Html.DisplayFor(modelItem => item.RunTime) %>
-            </td>
-            <td>
-                <%: Html.DisplayFor(modelItem => item.TotalVolume) %>
-            </td>
-            <td>
                 <%: Html.DisplayFor(modelItem => item.AvailableSeat) %>
             </td>
             <td>
                 <%: Html.DisplayFor(modelItem => item.Discount) %>
             </td>
             <td>
-                <%: Html.DisplayFor(modelItem => item.Rating) %>
-            </td>
-            <td>
-                <% using (Html.BeginForm("Create", "Reservation", new { id = item.MovieId }, FormMethod.Get))
+                <% using (Html.BeginForm("Create", "Reservation", new { id = item.ShowId }, FormMethod.Get))
                    { %>
                  Qty 
                  <%: Html.TextBox("Seats")%>               

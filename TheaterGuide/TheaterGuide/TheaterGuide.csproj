@@ -165,23 +165,25 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Controllers\ReservationController.cs" />
+    <Compile Include="Controllers\ShowController.cs" />
     <Compile Include="Controllers\TheaterController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201311110031099_initial.cs" />
-    <Compile Include="Migrations\201311110031099_initial.Designer.cs">
-      <DependentUpon>201311110031099_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201311111756040_initial.cs" />
+    <Compile Include="Migrations\201311111756040_initial.Designer.cs">
+      <DependentUpon>201311111756040_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201311110056396_change_field_name.cs" />
-    <Compile Include="Migrations\201311110056396_change_field_name.Designer.cs">
-      <DependentUpon>201311110056396_change_field_name.cs</DependentUpon>
+    <Compile Include="Migrations\201311112246239_add_field.cs" />
+    <Compile Include="Migrations\201311112246239_add_field.Designer.cs">
+      <DependentUpon>201311112246239_add_field.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\MovieModels.cs" />
     <Compile Include="Models\Reservation.cs" />
+    <Compile Include="Models\ShowModels.cs" />
     <Compile Include="Models\TheaterModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -279,7 +281,7 @@
     <Content Include="Views\Movie\Edit.aspx" />
     <Content Include="Views\Movie\Movies.aspx" />
     <Content Include="Views\Movie\SearchMovie.aspx" />
-    <Content Include="Views\Movie\SearchResult.aspx" />
+    <Content Include="Views\Show\SearchResult.aspx" />
     <Content Include="Views\Reservation\Create.aspx" />
     <Content Include="Views\Reservation\Delete.aspx" />
     <Content Include="Views\Reservation\Details.aspx" />
@@ -287,10 +289,16 @@
     <Content Include="Views\Reservation\Reservations.aspx" />
     <Content Include="Views\Reservation\ReservationHistory.aspx" />
     <Content Include="Views\Reservation\ReservationSave.aspx" />
+    <Content Include="Views\Show\Create.aspx" />
+    <Content Include="Views\Show\Delete.aspx" />
+    <Content Include="Views\Show\Details.aspx" />
+    <Content Include="Views\Show\Edit.aspx" />
+    <Content Include="Views\Show\Shows.aspx" />
     <Content Include="Views\Theater\Create.aspx" />
     <Content Include="Views\Theater\Delete.aspx" />
     <Content Include="Views\Theater\Details.aspx" />
     <Content Include="Views\Theater\Edit.aspx" />
+    <Content Include="Views\Theater\SearchTheaters.aspx" />
     <Content Include="Views\Theater\Theaters.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -329,18 +337,18 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201311110031099_initial.resx">
-      <DependentUpon>201311110031099_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201311111756040_initial.resx">
+      <DependentUpon>201311111756040_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201311110056396_change_field_name.resx">
-      <DependentUpon>201311110056396_change_field_name.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201311112246239_add_field.resx">
+      <DependentUpon>201311112246239_add_field.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

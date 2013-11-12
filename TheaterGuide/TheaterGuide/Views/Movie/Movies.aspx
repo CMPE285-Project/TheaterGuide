@@ -12,19 +12,13 @@
     <%: Html.ActionLink("Create New", "Create") %>
 </p>
 <% using (Html.BeginForm("Movies", "Movie", FormMethod.Get)) { %>
-    <p> Choose Theater: 
-        <%: Html.DropDownList("id", (List<SelectListItem>)ViewBag.TheaterLst, "slectct one") %>
-    </p>
     <p> Movie Name: 
         <%: Html.TextBox("SearchString") %>
     </p>
     <input type="submit" value="Search" />
 <% } %>
 <table>
-    <tr>
-        <th>
-            <%: Html.DisplayNameFor(model => model.TheaterId) %>
-        </th>
+    <tr>       
         <th>
             <%: Html.DisplayNameFor(model => model.Name) %>
         </th>
@@ -32,28 +26,10 @@
             <%: Html.DisplayNameFor(model => model.Director) %>
         </th>
         <th>
-            <%: Html.DisplayNameFor(model => model.Description) %>
-        </th>
-        <th>
-            <%: Html.DisplayNameFor(model => model.Price) %>
-        </th>
-        <th>
-            <%: Html.DisplayNameFor(model => model.BeginTime) %>
-        </th>
-        <th>
-            <%: Html.DisplayNameFor(model => model.Date) %>
+            <%: Html.DisplayNameFor(model => model.ReleaseDate) %>
         </th>
         <th>
             <%: Html.DisplayNameFor(model => model.RunTime) %>
-        </th>
-        <th>
-            <%: Html.DisplayNameFor(model => model.TotalVolume) %>
-        </th>
-        <th>
-            <%: Html.DisplayNameFor(model => model.AvailableSeat) %>
-        </th>
-        <th>
-            <%: Html.DisplayNameFor(model => model.Discount) %>
         </th>
         <th>
             <%: Html.DisplayNameFor(model => model.Rating) %>
@@ -62,10 +38,7 @@
     </tr>
 
 <% foreach (var item in Model) { %>
-    <tr>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.TheaterId) %>
-        </td>
+    <tr>        
         <td>
             <%: Html.DisplayFor(modelItem => item.Name) %>
         </td>
@@ -73,28 +46,10 @@
             <%: Html.DisplayFor(modelItem => item.Director) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.Description) %>
-        </td>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.Price) %>
-        </td>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.BeginTime) %>
-        </td>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.Date) %>
+            <%: Html.DisplayFor(modelItem => item.ReleaseDate) %>
         </td>
         <td>
             <%: Html.DisplayFor(modelItem => item.RunTime) %>
-        </td>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.TotalVolume) %>
-        </td>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.AvailableSeat) %>
-        </td>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.Discount) %>
         </td>
         <td>
             <%: Html.DisplayFor(modelItem => item.Rating) %>
@@ -102,8 +57,7 @@
         <td>
             <%: Html.ActionLink("Edit", "Edit", new { id=item.MovieId }) %> |
             <%: Html.ActionLink("Details", "Details", new { id=item.MovieId }) %> |
-            <%: Html.ActionLink("Delete", "Delete", new { id=item.MovieId }) %> |
-            <%: Html.ActionLink("Theater", "Details", "Theater",new { id=item.TheaterId }, null) %>
+            <%: Html.ActionLink("Delete", "Delete", new { id=item.MovieId }) %> 
         </td>
     </tr>
 <% } %>

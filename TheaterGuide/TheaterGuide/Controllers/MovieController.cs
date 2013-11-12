@@ -16,27 +16,8 @@ namespace TheaterGuide.Controllers
     public class MovieController : Controller
     {
         private UsersContext db = new UsersContext();
-        private DateTime defaultTime = new DateTime(1900, 1, 1);
 
-        public List<SelectListItem> GetDropDown()
-        {
-            List<SelectListItem> lst = new List<SelectListItem>();
-            var theaters = from m in db.Theaters
-                           orderby m.Name, m.Address
-                           select m;
-
-            foreach (var t in theaters)
-            {
-                lst.Add(new SelectListItem()
-                {
-                    Text = t.Name + "@" + t.Address,
-                    Value = t.TheaterId.ToString()
-                });
-            }
-            return lst;
-        }
-
-        private IQueryable<MovieModels> search(int id = 0, string searchString = null, DateTime? date = null)
+        private IQueryable<MovieModels> movieSearch(string searchString = null)
         {
             var movies = from m in db.Movies
                          select m;
@@ -45,35 +26,20 @@ namespace TheaterGuide.Controllers
             {
                 movies = movies.Where(s => s.Name.Contains(searchString));
             }
-            if (id != 0)
-            {
-                movies = movies.Where(s => s.TheaterId == id);
-            }
-            if (date != null)
-            {
-                movies = movies.Where(s => s.Date.Equals((DateTime)date));
-            }
+
             return movies;
         }
-        //
-        // GET: /Movie/
-        // Search by admin via theater information management
-        public ActionResult SearchMovie(int id=0)
+
+        //search movie info by customers
+        public ActionResult SearchMovie(string searchString = null)
         {
-            return View(search(id));
+            return View(movieSearch(searchString));
         }
 
-        // Search by costomers via home page
-        public ActionResult SearchResult(int id = 0, string searchString = null, DateTime? date = null)
-        {
-            return View(search(id, searchString, date));
-        }
-        
-        // Search by admin via movie information management
-        public ActionResult Movies(int id = 0, string searchString = null)
-        {
-            ViewBag.TheaterLst = GetDropDown();
-            return View(search(id, searchString));
+        // movie information management
+        public ActionResult Movies(string searchString = null)
+        {           
+            return View(movieSearch(searchString));
         }
 
         //
@@ -94,7 +60,6 @@ namespace TheaterGuide.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.TheaterLst = GetDropDown();
             return View();
         }
 

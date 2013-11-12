@@ -21,6 +21,19 @@
     <p>
         Sorry, your reservation is failed due to some reason.
     </p>
+     <%: Html.DisplayFor(item => item.ReserveId) %>
+        
+            <%: Html.DisplayFor(item => item.ShowId) %>
+        
+            <%: Html.DisplayFor(item => item.NumberOfSeats) %>
+    <%: Html.DisplayFor(item => item.TotalPaied) %>
+       
+            <%: Html.DisplayFor(item => item.SubmitDate) %>
+       
+            <%: Html.DisplayFor(item => item.SubmitTime) %>
+       
+            <%: Html.DisplayFor(item => item.Status) %>
+        
     <%} %>
 </asp:Content>
 

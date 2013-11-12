@@ -9,7 +9,7 @@ namespace TheaterGuide.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(TheaterGuide.Models.UsersContext context)

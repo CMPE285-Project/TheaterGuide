@@ -5,13 +5,13 @@ namespace TheaterGuide.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    public sealed partial class change_field_name : IMigrationMetadata
+    public sealed partial class initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(change_field_name));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201311110056396_change_field_name"; }
+            get { return "201311111756040_initial"; }
         }
         
         string IMigrationMetadata.Source

@@ -86,6 +86,14 @@
             <%: Html.ValidationMessageFor(model => model.Rating) %>
         </div>
 
+        <div class="editor-label">
+            <%: Html.LabelFor(model => model.WebSite) %>
+        </div>
+        <div class="editor-field">
+            <%: Html.EditorFor(model => model.WebSite) %>
+            <%: Html.ValidationMessageFor(model => model.WebSite) %>
+        </div>
+
         <p>
             <input type="submit" value="Create" />
         </p>

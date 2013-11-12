@@ -26,7 +26,7 @@
             <%: Html.DisplayNameFor(model => model.ReserveId) %>
         </th>
         <th>
-            <%: Html.DisplayNameFor(model => model.MovieId) %>
+            <%: Html.DisplayNameFor(model => model.ShowId) %>
         </th>
         <th>
             <%: Html.DisplayNameFor(model => model.NumberOfSeats) %>
@@ -52,7 +52,7 @@
             <%: Html.DisplayFor(modelItem => item.ReserveId) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.MovieId) %>
+            <%: Html.DisplayFor(modelItem => item.ShowId) %>
         </td>
         <td>
             <%: Html.DisplayFor(modelItem => item.NumberOfSeats) %>

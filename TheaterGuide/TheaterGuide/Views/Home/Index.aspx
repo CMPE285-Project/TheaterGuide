@@ -49,10 +49,10 @@
     </div>
     <!-- /.carousel -->
 
-    <% using (Html.BeginForm("SearchResult", "Movie", FormMethod.Get))
+    <% using (Html.BeginForm("SearchResult", "Show", FormMethod.Get))
        { %>
     <p> Choose Theater: 
-        <%: Html.DropDownList("id", (List<SelectListItem>)ViewBag.TheaterLst, "slectct one") %>
+        <%: Html.DropDownList("theaterId", (List<SelectListItem>)ViewBag.TheaterLst, "slectct one") %>
     </p>
     <p> Movie Name: 
         <%: Html.TextBox("SearchString") %>
