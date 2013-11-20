@@ -7,21 +7,21 @@
     <%: Html.ValidationSummary() %>
 
     <fieldset>
-        <legend>Change Email Address</legend>
-        <ol>
-            <li>
-                <label>Current email address</label>
+        <legend></legend>
+        <form role="form">
+            <div class="form-group">
+                <label>Current email address</label><br />
                 <%: Html.DisplayFor(m => m.Email) %>
-            </li>
-            <li> 
+            </div>
+            <div class="form-group">
                 <%: Html.HiddenFor(model => model.UserId) %>
                 <%: Html.HiddenFor(model => model.UserName) %>
                 <%: Html.HiddenFor(model => model.UserType) %>
-                <label>New email address</label>
+                <label>New email address</label><br />
                 <%: Html.EditorFor(model => model.Email) %>
                 <%: Html.ValidationMessageFor(model => model.Email) %>
-            </li>
-        </ol>
+            </div>
+        </form>
         <input type="submit" value="Save" />
     </fieldset>
 <% } %>

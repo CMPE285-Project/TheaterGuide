@@ -6,35 +6,36 @@
 
 <asp:Content ID="loginContent" ContentPlaceHolderID="MainContent" runat="server">
     <hgroup class="title">
-        <h1>Log in.</h1>
+        <h1>Log in</h1>
     </hgroup>
 
     <section id="loginForm">
-    <h2>Use a local account to log in.</h2>
+    <h2>Use a local account to log in</h2>
     <% using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) { %>
         <%: Html.AntiForgeryToken() %>
-        <%: Html.ValidationSummary(true) %>
+        <%: Html.ValidationSummary(null, new { style="color:#f00"})%>
 
         <fieldset>
-            <legend>Log in Form</legend>
-            <ol>
-                <li>
-                    <%: Html.LabelFor(m => m.UserName) %>
+            <legend></legend>
+            <form role="form">
+                <div class="form-group">
+                    <%: Html.LabelFor(m => m.UserName, new { style="padding-right:20px"})%>
                     <%: Html.TextBoxFor(m => m.UserName) %>
-                    <%: Html.ValidationMessageFor(m => m.UserName) %>
-                </li>
-                <li>
-                    <%: Html.LabelFor(m => m.Password) %>
+                    <%: Html.ValidationMessageFor(m => m.UserName, null, new { style="color:#f00"}) %>
+                </div>
+                <div class="form-group">
+                    <%: Html.LabelFor(m => m.Password, new { style="padding-right:27px"}) %>
                     <%: Html.PasswordFor(m => m.Password) %>
-                    <%: Html.ValidationMessageFor(m => m.Password) %>
-                </li>
-                <li>
+                    <%: Html.ValidationMessageFor(m => m.Password, null, new { style="color:#f00"}) %>
+                </div>
+                <div class="checkbox">
                     <%: Html.CheckBoxFor(m => m.RememberMe) %>
                     <%: Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" }) %>
-                </li>
-            </ol>
+                </div>
+            </form>
             <input type="submit" value="Log in" />
         </fieldset>
+        <br />
         <p>
             <%: Html.ActionLink("Register", "Register") %> if you don't have an account.
         </p>

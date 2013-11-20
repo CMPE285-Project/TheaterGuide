@@ -7,21 +7,21 @@
     <%: Html.ValidationSummary() %>
 
     <fieldset>
-        <legend>Change Password Form</legend>
-        <ol>
-            <li>
-                <%: Html.LabelFor(m => m.OldPassword) %>
+        <legend></legend>
+        <form role="form">
+            <div class="form-group">
+                <%: Html.LabelFor(m => m.OldPassword) %><br />
                 <%: Html.PasswordFor(m => m.OldPassword) %>
-            </li>
-            <li>
-                <%: Html.LabelFor(m => m.NewPassword) %>
+            </div>
+            <div class="form-group">
+                <%: Html.LabelFor(m => m.NewPassword) %><br />
                 <%: Html.PasswordFor(m => m.NewPassword) %>
-            </li>
-            <li>
+            </div>
+            <div class="form-group">
                 <%: Html.LabelFor(m => m.ConfirmPassword) %>
                 <%: Html.PasswordFor(m => m.ConfirmPassword) %>
-            </li>
-        </ol>
+            </div>
+        </form>
         <input type="submit" value="Change password" />
     </fieldset>
 <% } %>

@@ -9,18 +9,17 @@
 <h2>Reservation Management</h2>
 
     <% using (Html.BeginForm("Reservations", "Reservation", FormMethod.Get)) { %>
-    <p> Status: 
+    Status: 
         <%: Html.DropDownList("status", new List<SelectListItem> (new [] {
                     new SelectListItem { Text = "Cancelled", Value = "C" },
                     new SelectListItem { Text = "Valid", Value = "V"}}), "All")%>
-    </p>
-    <p> Reservation Id: 
+    Reservation Id: 
         <%: Html.TextBox("id") %>
-    </p>
+    
     <input type="submit" value="Search" />
 <% } %>
 
-<table>
+<table class="table table-striped" style="margin-top:20px">
     <tr>
         <th>
             <%: Html.DisplayNameFor(model => model.ReserveId) %>

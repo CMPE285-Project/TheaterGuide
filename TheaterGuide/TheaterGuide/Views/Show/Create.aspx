@@ -6,78 +6,85 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Create Show</h2>
+    <h2>Create Show</h2>
 
-<% using (Html.BeginForm()) { %>
+    <% using (Html.BeginForm())
+       { %>
     <%: Html.ValidationSummary(true) %>
 
     <fieldset>
-        <legend>ShowModels</legend>
+        <legend></legend>
 
-         <div class="editor-label">
+        <div class="col-sm-2">
             <label>Choose Theater</label>
         </div>
-        <div class="editor-field">
-            <%: Html.DropDownListFor(model => model.TheaterId, (List<SelectListItem>)ViewBag.TheaterLst, "select one") %>
+        <div style="padding-left: 100px">
+            <%: Html.DropDownListFor(model => model.TheaterId, (List<SelectListItem>)ViewBag.TheaterLst, "select one")%>
             <%: Html.ValidationMessageFor(model => model.TheaterId) %>
         </div>
+        <br />
 
-        <div class="editor-label">
+        <div class="col-sm-2">
             <label>Choose Movie</label>
         </div>
-        <div class="editor-field">
+        <div style="padding-left: 100px">
             <%: Html.DropDownListFor(model => model.MovieId, (List<SelectListItem>)ViewBag.MovieLst, "select one") %>
             <%: Html.ValidationMessageFor(model => model.MovieId) %>
         </div>
-        <div class="editor-label">
+        <br />
+
+        <div class="col-sm-2">
             <%: Html.LabelFor(model => model.Price) %>
         </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.Price) %>
+        <div style="padding-left: 100px">
+            <%: Html.EditorFor(model => model.Price)%>
             <%: Html.ValidationMessageFor(model => model.Price) %>
         </div>
+        <br />
 
-        <div class="editor-label">
+        <div class="col-sm-2">
             <%: Html.LabelFor(model => model.BeginTime) %>
         </div>
-        <div class="editor-field">
+        <div style="padding-left: 100px">
             <%: Html.EditorFor(model => model.BeginTime) %>
             <%: Html.ValidationMessageFor(model => model.BeginTime) %>
         </div>
+        <br />
 
-        <div class="editor-label">
+        <div class="col-sm-2">
             <%: Html.LabelFor(model => model.Date) %>
         </div>
-        <div class="editor-field">
+        <div style="padding-left: 100px">
             <%: Html.EditorFor(model => model.Date) %>
             <%: Html.ValidationMessageFor(model => model.Date) %>
         </div>
-
-        <div class="editor-label">
+        <br />
+        <div class="col-sm-2">
             <%: Html.LabelFor(model => model.AvailableSeat) %>
         </div>
-        <div class="editor-field">
+        <div style="padding-left: 100px">
             <%: Html.EditorFor(model => model.AvailableSeat) %>
             <%: Html.ValidationMessageFor(model => model.AvailableSeat) %>
         </div>
+        <br />
 
-        <div class="editor-label">
+        <div class="col-sm-2">
             <%: Html.LabelFor(model => model.Discount) %>
         </div>
-        <div class="editor-field">
+        <div style="padding-left: 100px">
             <%: Html.EditorFor(model => model.Discount) %>
             <%: Html.ValidationMessageFor(model => model.Discount) %>
         </div>
-        
-        <p>
+        <br />
+        <div class="col-sm-2">
             <input type="submit" value="Create" />
-        </p>
+        </div>
     </fieldset>
-<% } %>
-    <br/>
-<div>
-    <%: Html.ActionLink("Back to Show Information Management", "Shows") %>
-</div>
+    <% } %>
+    <br />
+    <div>
+        <%: Html.ActionLink("Back to Show Information Management", "Shows") %>
+    </div>
 
 </asp:Content>
 

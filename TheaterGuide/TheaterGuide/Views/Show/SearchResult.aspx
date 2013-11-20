@@ -8,7 +8,7 @@
 
     <h2>Search Result</h2>
 
-    <table>
+    <table class="table table-striped" style="margin-top:20px">
         <tr>
             
             <th>

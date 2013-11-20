@@ -49,26 +49,24 @@
     </div>
     <!-- /.carousel -->
 
-    <% using (Html.BeginForm("SearchResult", "Show", FormMethod.Get))
-       { %>
-    <p> Choose Theater: 
-        <%: Html.DropDownList("theaterId", (List<SelectListItem>)ViewBag.TheaterLst, "slectct one") %>
-    </p>
-    <p> Movie Name: 
-        <%: Html.TextBox("SearchString") %>
-    </p>
-    <p> Date:
-        <%: Html.TextBox("Date") %>
-    </p>
-    <input type="submit" value="Search" />
-<% } %>
 
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
     <div class="container marketing">
-
+        <div style="padding-bottom: 5em; text-align:center">
+            <% using (Html.BeginForm("SearchResult", "Show", FormMethod.Get))
+               { %>
+            <b>Choose Theater </b> 
+        <%: Html.DropDownList("theaterId", (List<SelectListItem>)ViewBag.TheaterLst, "slectct one", new {@class="btn btn-default dropdown-toggle"}) %>
+            <b>Movie Name </b>
+        <%: Html.TextBox("SearchString")%>
+            <b>Date </b>
+        <%: Html.TextBox("Date") %>
+            <input type="submit" value="Search" class="btn btn-info" />
+            <% } %>
+        </div>
         <!-- Three columns of text below the carousel -->
         <div class="row">
             <div class="col-lg-4">
@@ -134,6 +132,6 @@
             </div>
         </div>
 
-        
-</div>
+
+    </div>
 </asp:Content>

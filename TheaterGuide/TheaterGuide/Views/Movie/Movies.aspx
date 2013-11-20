@@ -12,12 +12,12 @@
     <%: Html.ActionLink("Create New", "Create") %>
 </p>
 <% using (Html.BeginForm("Movies", "Movie", FormMethod.Get)) { %>
-    <p> Movie Name: 
+     Movie Name: 
         <%: Html.TextBox("SearchString") %>
-    </p>
+    
     <input type="submit" value="Search" />
 <% } %>
-<table>
+<table class="table table-striped" style="margin-top:20px">
     <tr>       
         <th>
             <%: Html.DisplayNameFor(model => model.Name) %>

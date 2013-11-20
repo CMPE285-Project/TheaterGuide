@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
 <h2>Reservation History</h2>
-<table>
+<table class="table table-striped" style="margin-top:20px">
     <tr>
         <th>
             <%: Html.DisplayNameFor(model => model.ReserveId) %>

@@ -9,7 +9,7 @@
     <h2>Theater Details</h2>
 
     <fieldset>
-        <legend>TheaterModels</legend>
+        <legend></legend>
 
         <div class="display-label">
             <%: Html.DisplayNameFor(model => model.Name) %>

@@ -13,18 +13,17 @@
 </p>
      <% using (Html.BeginForm("Shows", "Show", FormMethod.Get))
        { %>
-    <p>
+    
         Choose Theater: 
         <%: Html.DropDownList("id", (List<SelectListItem>)ViewBag.TheaterLst, "slectct one") %>
-    </p>
-    <p>
+    
         Movie Name: 
         <%: Html.TextBox("SearchString") %>
-    </p>
+   
     <input type="submit" value="Search" />
     <% } %>
 
-<table>
+<table class="table table-striped" style="margin-top:20px">
     <tr>
         <th>
             <%: Html.DisplayNameFor(model => model.MovieName) %>
@@ -84,7 +83,10 @@
 <% } %>
 
 </table>
-
+<br/>
+<div>
+    <%: Html.ActionLink("Back to Site Management", "SiteMgmt", "Account") %>
+</div>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="IndexContent" runat="server">

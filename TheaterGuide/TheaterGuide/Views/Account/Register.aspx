@@ -6,36 +6,38 @@
 
 <asp:Content ID="registerContent" ContentPlaceHolderID="MainContent" runat="server">
     <hgroup class="title">
-        <h1>Register.</h1>
-        <h2>Create a new account.</h2>
+        <h1>Register</h1>
+        <h2>Create a new account</h2>
     </hgroup>
 
-    <% using (Html.BeginForm()) { %>
-        <%: Html.AntiForgeryToken() %>
-        <%: Html.ValidationSummary() %>
+    <% using (Html.BeginForm())
+       { %>
+    <%: Html.AntiForgeryToken() %>
+    <%: Html.ValidationSummary(null, new { style="color:#f00"}) %>
 
-        <fieldset>
-            <legend>Registration Form</legend>
-            <ol>
-                <li>
-                    <%: Html.LabelFor(m => m.UserName) %>
-                    <%: Html.TextBoxFor(m => m.UserName) %>
-                </li>
-                <li>
-                    <%: Html.LabelFor(m => m.Email) %>
-                    <%: Html.TextBoxFor(m => m.Email) %>
-                </li>
-                <li>
-                    <%: Html.LabelFor(m => m.Password) %>
-                    <%: Html.PasswordFor(m => m.Password) %>
-                </li>
-                <li>
-                    <%: Html.LabelFor(m => m.ConfirmPassword) %>
-                    <%: Html.PasswordFor(m => m.ConfirmPassword) %>
-                </li>
-            </ol>
+    <fieldset>
+        <legend></legend>
+        <form role="form">
+            <div class="form-group">
+                <%: Html.LabelFor(m => m.UserName) %><br/>
+                <%: Html.TextBoxFor(m => m.UserName) %>
+            </div>
+            <div class="form-group">
+                <%: Html.LabelFor(m => m.Email) %><br/>
+                <%: Html.TextBoxFor(m => m.Email) %>
+            </div>
+            <div class="form-group">
+                <%: Html.LabelFor(m => m.Password) %><br/>
+                <%: Html.PasswordFor(m => m.Password) %>
+            </div>
+            <div class="form-group">
+                <%: Html.LabelFor(m => m.ConfirmPassword) %><br/>
+                <%: Html.PasswordFor(m => m.ConfirmPassword) %>
+            </div>
+
             <input type="submit" value="Register" />
-        </fieldset>
+        </form>
+    </fieldset>
     <% } %>
 </asp:Content>
 

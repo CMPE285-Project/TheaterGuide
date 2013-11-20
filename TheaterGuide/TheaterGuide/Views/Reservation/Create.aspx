@@ -12,7 +12,7 @@
     <%: Html.ValidationSummary(true) %>
 
     <fieldset>
-        <legend>Reservation</legend>
+        <legend></legend>
 
         
         <div class="editor-label">

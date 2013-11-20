@@ -10,7 +10,7 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <fieldset>
-    <legend>Delete Reservation</legend>
+    <legend></legend>
 
     <div class="display-label">
         <%: Html.DisplayNameFor(model => model.ReserveId) %>

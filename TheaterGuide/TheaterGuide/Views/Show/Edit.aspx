@@ -12,7 +12,7 @@
     <%: Html.ValidationSummary(true) %>
 
     <fieldset>
-        <legend>ShowModels</legend>
+        <legend></legend>
 
         <%: Html.HiddenFor(model => model.ShowId) %>
 

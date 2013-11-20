@@ -9,7 +9,7 @@
 <h2>Details</h2>
 
 <fieldset>
-    <legend>ReservationModels</legend>
+    <legend></legend>
 
     <div class="display-label">
         <%: Html.DisplayNameFor(model => model.ReserveId) %>

@@ -9,13 +9,13 @@
     <h2>Theaters Search</h2>
      <% using (Html.BeginForm())
        { %>
-    <p> Theater Name: 
+     Theater Name: 
         <%: Html.TextBox("SearchString") %>
-    </p>
+    
     <input type="submit" value="Search" />
-<% } %>
+<% } %> 
 
-    <table>
+    <table class="table table-striped" style="margin-top:20px">
         <tr>
             <th>
                 <%: Html.DisplayNameFor(model => model.Name) %>
