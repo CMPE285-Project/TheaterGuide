@@ -5,7 +5,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
+<div class="functionPicture">
 <h2>Search Movie</h2>
     <% using (Html.BeginForm())
        { %>
@@ -14,52 +14,17 @@
     
     <input type="submit" value="Search" />
 <% } %>
-
-<table class="table table-striped" style="margin-top:20px">
-    <tr>       
-        <th>
-            <%: Html.DisplayNameFor(model => model.Name) %>
-        </th>
-        <th>
-            <%: Html.DisplayNameFor(model => model.Director) %>
-        </th>
-        <th>
-            <%: Html.DisplayNameFor(model => model.ReleaseDate) %>
-        </th>
-        <th>
-            <%: Html.DisplayNameFor(model => model.RunTime) %>
-        </th>
-        <th>
-            <%: Html.DisplayNameFor(model => model.Rating) %>
-        </th>
-        <th></th>
-    </tr>
-
+</div>
 <% foreach (var item in Model) { %>
-    <tr>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.Name) %>
-        </td>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.Director) %>
-        </td>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.ReleaseDate) %>
-        </td>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.RunTime) %>
-        </td>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.Rating) %>
-        </td>
-        <td>
-            <%: Html.ActionLink("Details", "Details", new { id=item.MovieId }) %> |
-            <%: Html.ActionLink("Movie Shows",  "SearchResult", "Show", new { theaterId=0, searchString=String.Empty, movieId=item.MovieId }, null) %>
-        </td>
-    </tr>
+    <img src="http://placehold.it/100x150" class="functionPicture" />
+    <div class="functionDescription">
+       <p>Name: <%: item.Name %></p>
+       <p>Rating: <%: item.Rating %></p>
+       <p>Description: <%: item.Description %></p>
+       <p>Director: <%: item.Director %></p>
+       <%: Html.ActionLink("Go to Reserve",  "SearchResult", "Show", new { theaterId=0, searchString=String.Empty, movieId=item.MovieId }, null) %>
+    </div>
 <% } %>
-
-</table>
 </asp:Content>
 
 
