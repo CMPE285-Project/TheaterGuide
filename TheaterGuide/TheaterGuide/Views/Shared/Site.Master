@@ -64,7 +64,9 @@
             </div>
         </div>
     </div>
-    <asp:ContentPlaceHolder ID="IndexContent" runat="server" />
+    <div style="margin-top: 95px">
+        <asp:ContentPlaceHolder ID="IndexContent" runat="server" />
+    </div>
     <div style="margin-top: 120px; padding-left: 10em; padding-right: 10em">
         <asp:ContentPlaceHolder ID="MainContent" runat="server" />
     </div>
