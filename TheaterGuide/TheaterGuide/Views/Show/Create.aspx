@@ -10,7 +10,7 @@
 
     <% using (Html.BeginForm())
        { %>
-    <%: Html.ValidationSummary(true) %>
+    <%: Html.ValidationSummary(true)%>
 
     <fieldset>
         <legend></legend>
@@ -20,7 +20,7 @@
         </div>
         <div style="padding-left: 100px">
             <%: Html.DropDownListFor(model => model.TheaterId, (List<SelectListItem>)ViewBag.TheaterLst, "select one")%>
-            <%: Html.ValidationMessageFor(model => model.TheaterId) %>
+            <%: Html.ValidationMessageFor(model => model.TheaterId, null, new { style="color:#f00"}) %>
         </div>
         <br />
 
@@ -29,7 +29,7 @@
         </div>
         <div style="padding-left: 100px">
             <%: Html.DropDownListFor(model => model.MovieId, (List<SelectListItem>)ViewBag.MovieLst, "select one") %>
-            <%: Html.ValidationMessageFor(model => model.MovieId) %>
+            <%: Html.ValidationMessageFor(model => model.MovieId, null, new { style="color:#f00"}) %>
         </div>
         <br />
 
@@ -38,7 +38,7 @@
         </div>
         <div style="padding-left: 100px">
             <%: Html.EditorFor(model => model.Price)%>
-            <%: Html.ValidationMessageFor(model => model.Price) %>
+            <%: Html.ValidationMessageFor(model => model.Price, null, new { style="color:#f00"}) %>
         </div>
         <br />
 
@@ -47,7 +47,7 @@
         </div>
         <div style="padding-left: 100px">
             <%: Html.EditorFor(model => model.BeginTime) %>
-            <%: Html.ValidationMessageFor(model => model.BeginTime) %>
+            <%: Html.ValidationMessageFor(model => model.BeginTime, null, new { style="color:#f00"}) %>
         </div>
         <br />
 
@@ -56,7 +56,7 @@
         </div>
         <div style="padding-left: 100px">
             <%: Html.EditorFor(model => model.Date) %>
-            <%: Html.ValidationMessageFor(model => model.Date) %>
+            <%: Html.ValidationMessageFor(model => model.Date, null, new { style="color:#f00"}) %>
         </div>
         <br />
         <div class="col-sm-2">
@@ -64,7 +64,7 @@
         </div>
         <div style="padding-left: 100px">
             <%: Html.EditorFor(model => model.AvailableSeat) %>
-            <%: Html.ValidationMessageFor(model => model.AvailableSeat) %>
+            <%: Html.ValidationMessageFor(model => model.AvailableSeat, null, new { style="color:#f00"}) %>
         </div>
         <br />
 
@@ -73,7 +73,7 @@
         </div>
         <div style="padding-left: 100px">
             <%: Html.EditorFor(model => model.Discount) %>
-            <%: Html.ValidationMessageFor(model => model.Discount) %>
+            <%: Html.ValidationMessageFor(model => model.Discount, null, new { style="color:#f00"}) %>
         </div>
         <br />
         <div class="col-sm-2">

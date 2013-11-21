@@ -21,12 +21,10 @@
                 <div class="form-group">
                     <%: Html.LabelFor(m => m.UserName, new { style="padding-right:20px"})%>
                     <%: Html.TextBoxFor(m => m.UserName) %>
-                    <%: Html.ValidationMessageFor(m => m.UserName, null, new { style="color:#f00"}) %>
                 </div>
                 <div class="form-group">
                     <%: Html.LabelFor(m => m.Password, new { style="padding-right:27px"}) %>
                     <%: Html.PasswordFor(m => m.Password) %>
-                    <%: Html.ValidationMessageFor(m => m.Password, null, new { style="color:#f00"}) %>
                 </div>
                 <div class="checkbox">
                     <%: Html.CheckBoxFor(m => m.RememberMe) %>

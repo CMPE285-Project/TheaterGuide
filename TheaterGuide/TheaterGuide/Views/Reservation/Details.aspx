@@ -79,7 +79,7 @@
 </fieldset>
 <p>
 
-    <%: Html.ActionLink("Cancel", "Cancel", new { id=Model.ReserveId }) %>
+    <button><%: Html.ActionLink("Cancel", "Cancel", new { id=Model.ReserveId }) %></button>
 </p>
 
 </asp:Content>

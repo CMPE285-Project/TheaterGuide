@@ -19,7 +19,7 @@
                 <%: Html.HiddenFor(model => model.UserType) %>
                 <label>New email address</label><br />
                 <%: Html.EditorFor(model => model.Email) %>
-                <%: Html.ValidationMessageFor(model => model.Email) %>
+                <%: Html.ValidationMessageFor(model => model.Email, null, new { style="color:#f00"}) %>
             </div>
         </form>
         <input type="submit" value="Save" />

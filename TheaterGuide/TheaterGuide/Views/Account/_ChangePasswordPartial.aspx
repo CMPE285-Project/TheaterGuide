@@ -4,7 +4,7 @@
 
 <% using (Html.BeginForm("ChangePassword", "Account")) { %>
     <%: Html.AntiForgeryToken() %>
-    <%: Html.ValidationSummary() %>
+    <%: Html.ValidationSummary(null, new { style="color:#f00"}) %>
 
     <fieldset>
         <legend></legend>
@@ -18,7 +18,7 @@
                 <%: Html.PasswordFor(m => m.NewPassword) %>
             </div>
             <div class="form-group">
-                <%: Html.LabelFor(m => m.ConfirmPassword) %>
+                <%: Html.LabelFor(m => m.ConfirmPassword) %><br />
                 <%: Html.PasswordFor(m => m.ConfirmPassword) %>
             </div>
         </form>
