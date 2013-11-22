@@ -8,70 +8,49 @@
 
     <h2>Search Result</h2>
 
-    <table class="table table-striped" style="margin-top:20px">
+    <table class="table table-bordered" style="margin-top:20px">
         <tr>
-            
-            <th>
-                <%: Html.DisplayNameFor(model => model.MovieName) %>
+            <th class="col-sm-2">
+            </th>
+            <th class="col-sm-8">
+                Information
             </th>
             <th>
-                <%: Html.DisplayNameFor(model => model.TheaterName) %>
+                Action
             </th>
-            <th>
-                <%: Html.DisplayNameFor(model => model.Address) %>
-            </th>
-            <th>
-                <%: Html.DisplayNameFor(model => model.Price) %>
-            </th>
-            <th>
-                <%: Html.DisplayNameFor(model => model.BeginTime) %>
-            </th>
-            <th>
-                <%: Html.DisplayNameFor(model => model.Date) %>
-            </th>
-            <th>
-                <%: Html.DisplayNameFor(model => model.AvailableSeat) %>
-            </th>
-            <th>
-                <%: Html.DisplayNameFor(model => model.Discount) %>
-            </th>
-            <th></th>
         </tr>
 
         <% foreach (var item in Model)
            { %>
         <tr>
             <td>
-                <%: Html.DisplayFor(modelItem => item.MovieName) %>
-            </td>
-            <td>
+                <img src="http://placehold.it/50x50" />
+                <br />
                 <%: Html.DisplayFor(modelItem => item.TheaterName) %>
             </td>
             <td>
-                <%: Html.DisplayFor(modelItem => item.Address) %>
-            </td>
-            <td>
-                <%: Html.DisplayFor(modelItem => item.Price) %>
-            </td>
-            <td>
-                <%: Html.DisplayFor(modelItem => item.BeginTime) %>
-            </td>
-            <td>
-                <%: Html.DisplayFor(modelItem => item.Date) %>
-            </td>
-            <td>
-                <%: Html.DisplayFor(modelItem => item.AvailableSeat) %>
-            </td>
-            <td>
-                <%: Html.DisplayFor(modelItem => item.Discount) %>
+                Movie Name: <%: Html.DisplayFor(modelItem => item.MovieName) %>
+ 
+                Address: <%: Html.DisplayFor(modelItem => item.Address) %>
+                <br />
+                Price: <%: Html.DisplayFor(modelItem => item.Price) %>
+
+                Begin Time: <%: Html.DisplayFor(modelItem => item.BeginTime) %>
+                <br />
+                Begin Date: <%: Html.DisplayFor(modelItem => item.Date) %>
+                Available Seats: <%: Html.DisplayFor(modelItem => item.AvailableSeat) %>
+                <br />
+                Discount: <%: Html.DisplayFor(modelItem => item.Discount) %>
             </td>
             <td>
                 <% using (Html.BeginForm("Create", "Reservation", new { id = item.ShowId }, FormMethod.Get))
                    { %>
-                 Qty 
-                 <%: Html.TextBox("Seats")%>               
-                <input type="submit" value="Reserve" />
+                 Qty: 
+                 <%=Html.TextBox("Seats","", new { style="width:30px" })%>          
+                 <input class="button" type="submit" value="Reserve" />
                 <% } %>
+                 <br />
+                 <a href="#">Map It</a>
             </td>
         </tr>
         <% } %>

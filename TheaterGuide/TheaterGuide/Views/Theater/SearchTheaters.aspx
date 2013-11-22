@@ -7,6 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <h2>Theaters Search</h2>
+    <div class="functionPicture">
      <% using (Html.BeginForm())
        { %>
      Theater Name: 
@@ -14,66 +15,45 @@
     
     <input type="submit" value="Search" />
 <% } %> 
-
-    <table class="table table-striped" style="margin-top:20px">
+    </div>
+    <table class="table table-bordered" style="margin-top:20px">
         <tr>
-            <th>
-                <%: Html.DisplayNameFor(model => model.Name) %>
+            <th class="col-sm-2">
+            </th>
+            <th class="col-sm-8">
+                Information
             </th>
             <th>
-                <%: Html.DisplayNameFor(model => model.Address) %>
+                Action
             </th>
-            <th>
-                <%: Html.DisplayNameFor(model => model.City) %>
-            </th>
-            <th>
-                <%: Html.DisplayNameFor(model => model.Phone) %>
-            </th>
-            <th>
-                <%: Html.DisplayNameFor(model => model.Hours) %>
-            </th>
-            <th>
-                <%: Html.DisplayNameFor(model => model.PriceRange) %>
-            </th>
-            <th>
-                <%: Html.DisplayNameFor(model => model.Rating) %>
-            </th>
-            <th>
-                <%: Html.DisplayNameFor(model => model.WebSite) %>
-            </th>
-            <th></th>
         </tr>
 
         <% foreach (var item in Model)
            { %>
         <tr>
             <td>
+                <img src="http://placehold.it/50x50" />
+                <br />
                 <%: Html.DisplayFor(modelItem => item.Name) %>
             </td>
             <td>
-                <%: Html.DisplayFor(modelItem => item.Address) %>
+            
+               Address: <%: Html.DisplayFor(modelItem => item.Address) %>
+            
+               City: <%: Html.DisplayFor(modelItem => item.City) %>
+               <br />
+               Phone: <%: Html.DisplayFor(modelItem => item.Phone) %>
+      
+               Hours: <%: Html.DisplayFor(modelItem => item.Hours) %>
+               <br />
+               Price: <%: Html.DisplayFor(modelItem => item.PriceRange) %>
+          
+               Rating: <%: Html.DisplayFor(modelItem => item.Rating) %>
+               <br />
+               <%: Html.DisplayFor(modelItem => item.WebSite) %>
             </td>
             <td>
-                <%: Html.DisplayFor(modelItem => item.City) %>
-            </td>
-            <td>
-                <%: Html.DisplayFor(modelItem => item.Phone) %>
-            </td>
-            <td>
-                <%: Html.DisplayFor(modelItem => item.Hours) %>
-            </td>
-            <td>
-                <%: Html.DisplayFor(modelItem => item.PriceRange) %>
-            </td>
-            <td>
-                <%: Html.DisplayFor(modelItem => item.Rating) %>
-            </td>
-            <td>
-                <%: Html.DisplayFor(modelItem => item.WebSite) %>
-            </td>
-            <td>
-                <%: Html.ActionLink("Details", "Details", new { id=item.TheaterId }) %> |
-                <%: Html.ActionLink("Movie Shows",  "SearchResult", "Show", new { theaterId=item.TheaterId }, null) %>
+                <%: Html.ActionLink("Show Movies",  "SearchResult", "Show", new { theaterId=item.TheaterId }, null) %>
             </td>
         </tr>
         <% } %>
