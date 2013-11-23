@@ -166,6 +166,7 @@
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Controllers\ReservationController.cs" />
     <Compile Include="Controllers\ShowController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\TheaterController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">

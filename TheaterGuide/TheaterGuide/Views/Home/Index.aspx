@@ -46,5 +46,5 @@
     <div class="functionDescription">
         Location Description
     </div>
-
+    <%:User.Identity.AuthenticationType %>
 </asp:Content>

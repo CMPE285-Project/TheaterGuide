@@ -81,8 +81,17 @@ namespace TheaterGuide.Controllers
                 // Attempt to register the user
                 try
                 {
+                    if (!Roles.RoleExists("admin"))
+                    {
+                        Roles.CreateRole("admin");
+                    }
+                    if (!Roles.RoleExists("member"))
+                    {
+                        Roles.CreateRole("member");
+                    }
                     WebSecurity.CreateUserAndAccount(model.UserName, model.Password, propertyValues:new {model.Email, model.UserType});
                     WebSecurity.Login(model.UserName, model.Password);
+                    System.Web.Security.Roles.AddUserToRole(model.UserName, "member");
                     return RedirectToAction("Index", "Home");
                 }
                 catch (MembershipCreateUserException e)
