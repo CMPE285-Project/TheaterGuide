@@ -8,13 +8,13 @@
 
 <h2>Account Management</h2>
     <p>You're logged in as <strong><%: User.Identity.Name %></strong>.</p>
-    <p class="message-success"><%: (string)ViewBag.StatusMessage %></p>
+    <p style="color:#ff6a00"><%: (string)ViewBag.StatusMessage %></p>
 
     <div id="menu" style="float:left; margin-right:100px">
         <ul style="font-size:medium">
             <li><%: Ajax.ActionLink("Change Email Address", "ChangeEmail", "Account", new AjaxOptions { UpdateTargetId = "right" } ) %></li>
             <li><%: Ajax.ActionLink("Change Password", "ChangePassword", "Account", new AjaxOptions { UpdateTargetId = "right" } ) %></li>
-            <li><%: Ajax.ActionLink("Reserve History", "ReservationHistory", "Reservation", new AjaxOptions { UpdateTargetId = "right" } ) %></li>
+            <li><%: Html.ActionLink("Reserve History", "ReservationHistory", "Reservation") %></li>
         </ul>
     </div>
 

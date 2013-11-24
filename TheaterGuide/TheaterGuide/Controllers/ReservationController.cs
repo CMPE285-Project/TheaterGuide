@@ -72,6 +72,7 @@ namespace TheaterGuide.Controllers
             ViewBag.ReturnUrl = Url.Action("Create", new { id, seats});
 
             ShowModels show = db.Shows.Find(id);
+
             MovieModels movie = db.Movies.Find(show.MovieId);
             TheaterModels theater = db.Theaters.Find(show.TheaterId);
 
@@ -89,25 +90,46 @@ namespace TheaterGuide.Controllers
             model.TotalPaied = TotalPrice;
             model.Email = db.UserProfiles.Find(model.UserId).Email;
 
+
+            if (show.AvailableSeat < seats)
+            {
+                ViewBag.Success = false;
+                ViewBag.Message = "Sorry, there is not enough available seats. \nThe total seats available now is <b>" +
+                    show.AvailableSeat + "</b>.";
+
+                return View("ReservationSave", model);
+            }
+
             return View(model);
         }
 
         [HttpPost]
         public ActionResult Create(ReservationModels reserve)
         {
+            ViewBag.Message = null;
             ViewBag.Success = false;
 
-            reserve.SubmitDate = DateTime.Today;
-            reserve.SubmitTime = DateTime.Now.TimeOfDay.ToString();
-            reserve.Status = "V";
-            try
-            {
-                db.Reservations.Add(reserve);
-                db.SaveChanges();
-                ViewBag.Success = true;
-            }
-            catch (Exception ex) { }
+            ShowModels show = db.Shows.Find(reserve.ShowId);
 
+            if (show.AvailableSeat >= reserve.NumberOfSeats)
+            {
+                show.AvailableSeat -= reserve.NumberOfSeats;
+
+                reserve.SubmitDate = DateTime.Today;
+                reserve.SubmitTime = DateTime.Now.TimeOfDay.ToString();
+                reserve.Status = "V";
+
+                try
+                {
+                    db.Entry(show).State = EntityState.Modified;
+                    db.Reservations.Add(reserve);
+                    db.SaveChanges();
+                    ViewBag.Success = true;
+                }
+                catch (Exception ex) {
+                    ViewBag.Message = "Sorry, your reservation is failed due to some reason.";
+                }
+            }
             return View("ReservationSave", reserve);
         }
 

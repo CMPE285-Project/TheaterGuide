@@ -34,6 +34,7 @@ namespace TheaterGuide.Models
         [MaxLength(20)]
         public string UserName { get; set; }
         [Required]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
         [Required]
         [MaxLength(1)]

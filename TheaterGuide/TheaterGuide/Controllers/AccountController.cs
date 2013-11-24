@@ -108,10 +108,9 @@ namespace TheaterGuide.Controllers
         {
             ViewBag.StatusMessage =
                 message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
-                : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
                 : message == ManageMessageId.ChangeEmailSuccess ? "Your email address has been changed."
                 : message == ManageMessageId.CancelReservationSuccess ? "Your reservation is successfully cancelled."
-
+                : message == ManageMessageId.ChangePasswordFail ? "The current password is incorrect or the new password is invalid."
                 : "";
             
             //ViewBag.HasLogin = OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
@@ -119,36 +118,7 @@ namespace TheaterGuide.Controllers
             var localUser = db.UserProfiles.Find(WebSecurity.GetUserId(User.Identity.Name));
             return View(localUser);
         }
-/*
-        //
-        // POST: /Account/Disassociate
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Disassociate(string provider, string providerUserId)
-        {
-            string ownerAccount = OAuthWebSecurity.GetUserName(provider, providerUserId);
-            ManageMessageId? message = null;
-
-            // Only disassociate the account if the currently logged in user is the owner
-            if (ownerAccount == User.Identity.Name)
-            {
-                // Use a transaction to prevent the user from deleting their last login credential
-                using (var scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions { IsolationLevel = IsolationLevel.Serializable }))
-                {
-                    bool hasLocalAccount = OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
-                    if (hasLocalAccount || OAuthWebSecurity.GetAccountsFromUserName(User.Identity.Name).Count > 1)
-                    {
-                        OAuthWebSecurity.DeleteAccount(provider, providerUserId);
-                        scope.Complete();
-                        message = ManageMessageId.RemoveLoginSuccess;
-                    }
-                }
-            }
-
-            return RedirectToAction("Manage", new { Message = message });
-        }
-*/
         // Get
         public PartialViewResult ChangePassword()
         {
@@ -189,32 +159,9 @@ namespace TheaterGuide.Controllers
                     }
                 }
             }
-            else
-            {
-                // User does not have a local password so remove any validation errors caused by a missing
-                // OldPassword field
-                ModelState state = ModelState["OldPassword"];
-                if (state != null)
-                {
-                    state.Errors.Clear();
-                }
-
-                if (ModelState.IsValid)
-                {
-                    try
-                    {
-                        WebSecurity.CreateAccount(User.Identity.Name, model.NewPassword);
-                        return RedirectToAction("AccountInfo", new { Message = ManageMessageId.SetPasswordSuccess });
-                    }
-                    catch (Exception e)
-                    {
-                        ModelState.AddModelError("", e);
-                    }
-                }
-            }
 
             // If we got this far, something failed, redisplay form
-            return RedirectToAction("AccountInfo");
+            return RedirectToAction("AccountInfo", new { Message = ManageMessageId.ChangePasswordFail });
         }
 
         // Get
@@ -258,7 +205,7 @@ namespace TheaterGuide.Controllers
         public enum ManageMessageId
         {
             ChangePasswordSuccess,
-            SetPasswordSuccess,
+            ChangePasswordFail,
             RemoveLoginSuccess,
             ChangeEmailSuccess,
             CancelReservationSuccess,

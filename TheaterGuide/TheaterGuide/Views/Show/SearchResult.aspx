@@ -46,7 +46,7 @@
                 <% using (Html.BeginForm("Create", "Reservation", new { id = item.ShowId }, FormMethod.Get))
                    { %>
                  Qty: 
-                 <%=Html.TextBox("Seats","", new { style="width:30px" })%>          
+                 <%=Html.TextBox("Seats","", new { style="width:30px" })%>
                  <input class="button" type="submit" value="Reserve" />
                 <% } %>
                  <br />

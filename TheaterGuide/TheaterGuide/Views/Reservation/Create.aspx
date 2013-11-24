@@ -13,79 +13,64 @@
 
     <fieldset>
         <legend></legend>
-
         
-        <div class="editor-label">
-            <label>User Name: </label><%: User.Identity.Name %>
+        <div>
+            <label style="width:120px">User Name </label><%: User.Identity.Name %>
         </div>
         
-        <div class="editor-field">
+        <div>
             <%: Html.HiddenFor(model => model.UserId) %>
             <%: Html.HiddenFor(model => model.ShowId) %>
         </div>
 
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.MovieName) %>
-        </div>
-        <div class="editor-field">
+        <div>
+            <%: Html.LabelFor(model => model.MovieName, new { style="width:120px" })%>
             <%: Html.DisplayFor(model => model.MovieName) %>  
             <%: Html.HiddenFor(model => model.MovieName) %>            
         </div>
 
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.TheaterName) %>
-        </div>
-        <div class="editor-field">
+        <div>
+            <%: Html.LabelFor(model => model.TheaterName, new { style="width:120px" }) %>
             <%: Html.DisplayFor(model => model.TheaterName) %>  
             <%: Html.HiddenFor(model => model.TheaterName) %>            
         </div>
 
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Address) %>
-        </div>
-        <div class="editor-field">
+        <div>
+            <%: Html.LabelFor(model => model.Address, new { style="width:120px" }) %>
             <%: Html.DisplayFor(model => model.Address) %>    
             <%: Html.HiddenFor(model => model.Address) %>           
         </div>
 
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.BeginTime) %>
-        </div>
-        <div class="editor-field">
+        <div>
+            <%: Html.LabelFor(model => model.BeginTime, new { style="width:120px" }) %>
             <%: Html.DisplayFor(model => model.BeginTime) %> 
             <%: Html.HiddenFor(model => model.BeginTime) %>          
         </div>
 
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Date) %>
-        </div>
-        <div class="editor-field">
+        <div>
+            <%: Html.LabelFor(model => model.Date, new { style="width:120px" }) %>
             <%: Html.DisplayFor(model => model.Date) %>  
             <%: Html.HiddenFor(model => model.Date) %>         
         </div>
 
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.NumberOfSeats) %>
-        </div>
-        <div class="editor-field">
+        <div>
+            <%: Html.LabelFor(model => model.NumberOfSeats, new { style="width:120px" }) %>
             <%: Html.DisplayFor(model => model.NumberOfSeats) %>
             <%: Html.HiddenFor(model => model.NumberOfSeats) %>
         </div>
 
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.TotalPaied) %>
-        </div>
-        <div class="editor-field">
+        <div>
+            <%: Html.LabelFor(model => model.TotalPaied, new { style="width:120px" }) %>
             <%: Html.DisplayFor(model => model.TotalPaied) %>
             <%: Html.HiddenFor(model => model.TotalPaied) %>
         </div>        
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Email) %>
-        </div>
-        <div class="editor-field">
+
+        <div>
+            <%: Html.LabelFor(model => model.Email, new { style="width:120px" }) %>
             <%: Html.DisplayFor(model => model.Email) %>
             <%: Html.HiddenFor(model => model.Email) %>
         </div> 
+
         <p>
             <input type="submit" value="Submit Reservation" /> |
 
