@@ -5,10 +5,12 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TheaterGuide.Filters;
 using TheaterGuide.Models;
 
 namespace TheaterGuide.Controllers
 {
+    [InitializeSimpleMembership]
     public class ShowController : Controller
     {
         private UsersContext db = new UsersContext();
@@ -62,6 +64,8 @@ namespace TheaterGuide.Controllers
                              MovieName = m.Name,
                              TheaterName = t.Name,
                              Address = t.Address,
+                             City = t.City,
+                             State = t.State,
                              Price = s.Price,
                              BeginTime = s.BeginTime,
                              Date = s.Date,

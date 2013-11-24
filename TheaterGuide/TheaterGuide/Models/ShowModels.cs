@@ -49,6 +49,12 @@ namespace TheaterGuide.Models
         public string TheaterName { get; set; }
         [Display(Name = "Theater Address")]
         public string Address { get; set; }
+        [Display(Name = "City")]
+        public string City { get; set; }
+        [Display(Name = "State")]
+        public string State { get; set; }
+        [Display(Name = "Zip Code")]
+        public string Zip { get; set; }
         [DisplayFormat(DataFormatString = "{0:C}")]
         public double Price { get; set; }
         [Display(Name = "Begin Time")]

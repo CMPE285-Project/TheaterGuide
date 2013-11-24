@@ -42,7 +42,7 @@
                                     <li><%: Html.ActionLink("Home", "Index", "Home") %></li>
                                     <li><%: Html.ActionLink("Movies", "SearchMovie", "Movie") %></li>
                                     <li><%: Html.ActionLink("Theaters", "SearchTheaters", "Theater") %></li>
-                                    <!--<li><%: Html.ActionLink("Account", "AccountInfo", "Account") %></li>-->
+                                    <li><%: Html.ActionLink("My Schedule", "ReservationHistory", "Reservation") %></li>
                                     <li><%: Html.ActionLink("About", "About", "Home") %></li>
                                     <li><%: Html.ActionLink("Contact", "Contact", "Home") %></li>
                                 <%} %>
