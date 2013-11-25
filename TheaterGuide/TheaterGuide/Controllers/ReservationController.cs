@@ -7,6 +7,8 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
+using Mvc.Mailer;
+using TheaterGuide.Mailers;
 using TheaterGuide.Filters;
 using TheaterGuide.Models;
 
@@ -125,11 +127,13 @@ namespace TheaterGuide.Controllers
                     db.Reservations.Add(reserve);
                     db.SaveChanges();
                     ViewBag.Success = true;
+                    SendWelcomeMessage(reserve.Email, reserve);
                 }
                 catch (Exception ex) {
                     ViewBag.Message = "Sorry, your reservation is failed due to some reason.";
                 }
             }
+
             return View("ReservationSave", reserve);
         }
 
@@ -154,8 +158,12 @@ namespace TheaterGuide.Controllers
         {
             if (ModelState.IsValid)
             {
+                ShowModels show = db.Shows.Find(reservationmodels.ShowId);
+
                 reservationmodels.Status = "C";
+                show.AvailableSeat += reservationmodels.NumberOfSeats;
                 db.Entry(reservationmodels).State = EntityState.Modified;
+                db.Entry(show).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("AccountInfo", "Account", new { Message = AccountController.ManageMessageId.CancelReservationSuccess });
             }
@@ -191,6 +199,20 @@ namespace TheaterGuide.Controllers
         {
             db.Dispose();
             base.Dispose(disposing);
+        }
+
+        // send email helper
+        private IUserMailer _userMailer = new UserMailer();
+        public IUserMailer UserMailer
+        {
+            get { return _userMailer; }
+            set { _userMailer = value; }
+        }
+
+        public void SendWelcomeMessage(string sendTo, ReservationModels reserve)
+        {
+            UserMailer.Welcome(sendTo, reserve).Send(); //Send() extension method: using Mvc.Mailer
+            //return RedirectToAction("Index");
         }
     }
 }

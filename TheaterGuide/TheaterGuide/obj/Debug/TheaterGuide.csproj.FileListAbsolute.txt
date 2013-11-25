@@ -154,3 +154,4 @@ C:\Users\Chi\Documents\GitHub\TheaterGuide\TheaterGuide\TheaterGuide\obj\Debug\T
 C:\Users\Chi\Documents\GitHub\TheaterGuide\TheaterGuide\TheaterGuide\obj\Debug\TheaterGuide.csproj.GenerateResource.Cache
 C:\Users\Chi\Documents\GitHub\TheaterGuide\TheaterGuide\TheaterGuide\obj\Debug\TheaterGuide.dll
 C:\Users\Chi\Documents\GitHub\TheaterGuide\TheaterGuide\TheaterGuide\obj\Debug\TheaterGuide.pdb
+\\psf\Home\Documents\SJSU\Project\GitHub\TheaterGuide\TheaterGuide\TheaterGuide\bin\Mvc.Mailer.dll

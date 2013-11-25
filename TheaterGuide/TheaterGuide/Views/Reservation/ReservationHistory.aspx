@@ -13,7 +13,7 @@
             <%: Html.DisplayNameFor(model => model.ReserveId) %>
         </th>
         <th>
-            <%: Html.DisplayNameFor(model => model.ShowId) %>
+            <%: Html.DisplayNameFor(model => model.MovieName) %>
         </th>
         <th>
             <%: Html.DisplayNameFor(model => model.NumberOfSeats) %>
@@ -39,7 +39,7 @@
             <%: Html.DisplayFor(modelItem => item.ReserveId) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.ShowId) %>
+            <%: Html.DisplayFor(modelItem => item.MovieName) %>
         </td>
         <td>
             <%: Html.DisplayFor(modelItem => item.NumberOfSeats) %>
@@ -48,7 +48,7 @@
             <%: Html.DisplayFor(modelItem => item.TotalPaied) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.SubmitDate) %>
+            <%= item.SubmitDate.ToString("MMMM dd, yyyy") %>
         </td>
         <td>
             <%: Html.DisplayFor(modelItem => item.SubmitTime) %>

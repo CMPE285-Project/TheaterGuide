@@ -41,7 +41,7 @@
     <%: Html.DisplayFor(item => item.TotalPaied) %><br />
 
     <label style="width:120px"><%: Html.DisplayNameFor(item => item.Date) %></label>
-    <%: Html.DisplayFor(item => item.Date) %><br />
+    <%= Model.SubmitDate.ToString("MMMM dd, yyyy") %><br />
 
     <label style="width:120px">Address</label>
     <%: Html.DisplayFor(item => item.Address) %>

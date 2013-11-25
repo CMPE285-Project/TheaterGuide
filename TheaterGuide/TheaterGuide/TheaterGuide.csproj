@@ -40,6 +40,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Mvc.Mailer">
+      <HintPath>..\packages\MvcMailer.4.5\lib\45\Mvc.Mailer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -172,6 +175,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mailers\IUserMailer.cs" />
+    <Compile Include="Mailers\UserMailer.cs" />
     <Compile Include="Migrations\201311111756040_initial.cs" />
     <Compile Include="Migrations\201311111756040_initial.Designer.cs">
       <DependentUpon>201311111756040_initial.cs</DependentUpon>
@@ -302,6 +307,7 @@
     <Content Include="Views\Theater\Edit.aspx" />
     <Content Include="Views\Theater\SearchTheaters.aspx" />
     <Content Include="Views\Theater\Theaters.aspx" />
+    <Content Include="Views\UserMailer\Welcome.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -336,6 +342,7 @@
     <Content Include="Views\Shared\_LoginPartial.aspx" />
     <Content Include="Views\Shared\Site.Master" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\UserMailer\_Layout.Master" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
