@@ -14,13 +14,13 @@
         </ol>
         <div class="carousel-inner">
             <div class="item active">
-                <img src="../../Images/enders-game-movie-wallpaper-and-poster.jpg"/>
+                <img src="../../Images/free-birds05_副本.jpg"/>
             </div>
             <div class="item">
                 <img src="../../Images/enders-game-movie-wallpaper-and-poster.jpg"/>
             </div>
             <div class="item">
-                <img src="../../Images/enders-game-movie-wallpaper-and-poster.jpg"/>
+                <img src="../../Images/Thor 2 The Dark World Movie widescreen HD Wallpaper Image Picture Photo Backgrounds_副本.jpg"/>
             </div>
   
         </div>
@@ -34,17 +34,17 @@
     
 </asp:Content>
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
-    <img src="http://placehold.it/100x150" class="functionPicture" />
+    <img src="../../Images/movies_副本.jpg"class="functionPicture" />
     <div class="functionDescription">
-        Search Description
+        Search function will give you the easiest access to your favorite movies! 
     </div>
-    <img src="http://placehold.it/100x150" class="functionPicture" />
+    <img src="../../Images/mzl.qqkpcjgs.175x175-75_副本.jpg" class="functionPicture" />
     <div class="functionDescription">
-        Reserve Description
+        Reserve your ticket online and get your e-ticket just by checking your e-mail!
     </div>
-    <img src="http://placehold.it/100x150" class="functionPicture" />
+    <img src="../../Images/locate-feature_副本.png" class="functionPicture" />
     <div class="functionDescription">
-        Location Description
+        Too trouble to find the theater on GPS? Locate it here!
     </div>
     <%:User.Identity.AuthenticationType %>
 </asp:Content>
