@@ -18,10 +18,10 @@
 <% foreach (var item in Model) { %>
     <img src="http://placehold.it/100x150" class="functionPicture" />
     <div class="functionDescription">
-       <p>Name: <%: item.Name %></p>
-       <p>Rating: <%: item.Rating %></p>
-       <p>Description: <%: item.Description %></p>
-       <p>Director: <%: item.Director %></p>
+       Name: <%: item.Name %><br/>
+       Rating: <%: item.Rating %><br/>
+       Description: <%: item.Description %><br/>
+       Director: <%: item.Director %><br/>
        <%: Html.ActionLink("Go to Reserve",  "SearchResult", "Show", new { theaterId=0, searchString=String.Empty, movieId=item.MovieId }, null) %>
     </div>
 <% } %>

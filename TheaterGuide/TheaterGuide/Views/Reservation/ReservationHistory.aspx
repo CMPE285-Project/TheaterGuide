@@ -54,10 +54,16 @@
             <%: Html.DisplayFor(modelItem => item.SubmitTime) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.Status) %>
+            <% if(item.Status.Equals("V")) { %>
+                Reserved
+            <%} else {%>
+                Cancelled
+            <%} %>
         </td>
         <td>
+            <%if(item.Status.Equals("V") && (item.Date.CompareTo(DateTime.Now) > 0)) {%>
             <%: Html.ActionLink("Cancel", "Cancel", new { id=item.ReserveId }) %> |
+            <%} %>
             <%: Html.ActionLink("Details", "Details", new { id=item.ReserveId }) %> 
         </td>
     </tr>

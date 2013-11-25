@@ -12,7 +12,7 @@
     Status: 
         <%: Html.DropDownList("status", new List<SelectListItem> (new [] {
                     new SelectListItem { Text = "Cancelled", Value = "C" },
-                    new SelectListItem { Text = "Valid", Value = "V"}}), "All")%>
+                    new SelectListItem { Text = "Reserved", Value = "V"}}), "All")%>
     Reservation Id: 
         <%: Html.TextBox("id") %>
     

@@ -38,16 +38,15 @@
             </td>
             <td>
             
-               Address: <%: Html.DisplayFor(modelItem => item.Address) %>
-            
-               City: <%: Html.DisplayFor(modelItem => item.City) %>
+               Address: <%: Html.DisplayFor(modelItem => item.Address) %>, 
+                        <%: Html.DisplayFor(modelItem => item.City) %>
                <br />
                Phone: <%: Html.DisplayFor(modelItem => item.Phone) %>
-      
+               <br />
                Hours: <%: Html.DisplayFor(modelItem => item.Hours) %>
                <br />
-               Price: <%: Html.DisplayFor(modelItem => item.PriceRange) %>
-          
+               Price Range: <%: Html.DisplayFor(modelItem => item.PriceRange) %>
+               <br />
                Rating: <%: Html.DisplayFor(modelItem => item.Rating) %>
                <br />
                <%: Html.DisplayFor(modelItem => item.WebSite) %>

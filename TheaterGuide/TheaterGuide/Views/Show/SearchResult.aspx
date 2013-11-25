@@ -8,15 +8,12 @@
 
     <h2>Search Result</h2>
 
-    <table class="table table-bordered" style="margin-top:20px">
+    <table class="table table-bordered" style="margin-top: 20px">
         <tr>
-            <th class="col-sm-2">
+            <th class="col-sm-2"></th>
+            <th class="col-sm-8">Information
             </th>
-            <th class="col-sm-8">
-                Information
-            </th>
-            <th>
-                Action
+            <th>Action
             </th>
         </tr>
 
@@ -28,61 +25,68 @@
                 <br />
                 <%: Html.DisplayFor(modelItem => item.TheaterName) %>
             </td>
-            <td>
-                Movie Name: <%: Html.DisplayFor(modelItem => item.MovieName) %>
- 
-                Address: <%: Html.DisplayFor(modelItem => item.Address) %>
+            <td>Movie Name: <%: Html.DisplayFor(modelItem => item.MovieName) %>
+                <br />
+                Address: <%: Html.DisplayFor(modelItem => item.Address) %>, 
+                        <%: Html.DisplayFor(modelItem => item.City) %>
                 <br />
                 Price: <%: Html.DisplayFor(modelItem => item.Price) %>
-
-                Begin Time: <%: Html.DisplayFor(modelItem => item.BeginTime) %>
                 <br />
-                Begin Date: <%: Html.DisplayFor(modelItem => item.Date) %>
+                Time: <%: Html.DisplayFor(modelItem => item.BeginTime) %>, 
+                <%: Html.DisplayFor(modelItem => item.Date) %>
+                <br />
                 Available Seats: <%: Html.DisplayFor(modelItem => item.AvailableSeat) %>
                 <br />
-                Discount: <%: Html.DisplayFor(modelItem => item.Discount) %>
+                <%if(item.Discount < 1) {%>
+                <span style="color:#ce2e2e">Discount: <%: Html.DisplayFor(modelItem => item.Discount)%></span>
+                <%} %>
             </td>
             <td>
+                <% if (item.Date.CompareTo(DateTime.Now) > 0)
+                   {%>
                 <% using (Html.BeginForm("Create", "Reservation", new { id = item.ShowId }, FormMethod.Get))
                    { %>
                  Qty: 
-                 <%=Html.TextBox("Seats","", new { style="width:30px" })%>
-                 <input class="button" type="submit" value="Reserve" />
-                <% } %>
-                 <br />
-                 <a href="<%:item.Address%>,<%:item.City %>,<%:item.State %>" data-toggle="modal" data-target="#myModal" class="myMap">Map It</a>
+                 <%=Html.TextBox("Seats", "", new { style = "width:30px" })%>
+                <input class="button" type="submit" value="Reserve" />
+                <% }
+                   } %>
+                <br />
+                <a href="<%:item.Address%>,<%:item.City %>,<%:item.State %>" data-toggle="modal" data-target="#myModal" class="myMap">Map It</a>
             </td>
         </tr>
         <% } %>
     </table>
     <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-            <div id="map-canvas" style="width:500px; height:500px;"></div>
-            <br />
-            <div id="directionsPanel"></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="map-canvas" style="width: 500px; height: 500px;"></div>
+                    <br />
+                    <div id="directionsPanel"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="IndexContent" runat="server">
-
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="ScriptsSection" runat="server">
-     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     <script>
         var targetAddress = null;
         var rendererOptions = {
@@ -102,7 +106,7 @@
             directionsDisplay.setMap(map);
             directionsDisplay.setPanel(document.getElementById('directionsPanel'));
             calcRoute();
-           
+
         }
 
         function calcRoute() {
@@ -113,7 +117,7 @@
                         origin: currentLocation,
                         destination: targetAddress,
                         travelMode: google.maps.TravelMode.DRIVING
-                      };
+                    };
                     directionsService.route(request, function (response, status) {
                         if (status == google.maps.DirectionsStatus.OK) {
                             directionsDisplay.setDirections(response);
@@ -137,5 +141,5 @@
         $("a").click(function () {
             targetAddress = $(this).attr('href');
         });
-</script>
+    </script>
 </asp:Content>

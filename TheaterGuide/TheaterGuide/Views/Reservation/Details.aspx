@@ -11,75 +11,61 @@
 <fieldset>
     <legend></legend>
 
-    <div class="display-label">
+    <label style="width:120px">
         <%: Html.DisplayNameFor(model => model.ReserveId) %>
-    </div>
-    <div class="display-field">
-        <%: Html.DisplayFor(model => model.ReserveId) %>
-    </div>
+    </label>
+        <%: Html.DisplayFor(model => model.ReserveId) %><br />
 
-    <div class="display-label">
+    <label style="width:120px">
         <%: Html.DisplayNameFor(model => model.MovieName) %>
-    </div>
-    <div class="display-field">
-        <%: Html.DisplayFor(model => model.MovieName) %>
-    </div>
-    <div class="display-label">
+    </label>
+        <%: Html.DisplayFor(model => model.MovieName) %><br />
+
+    <label style="width:120px">
         <%: Html.DisplayNameFor(model => model.TheaterName) %>
-    </div>
-    <div class="display-field">
-        <%: Html.DisplayFor(model => model.TheaterName) %>
-    </div>
-    <div class="display-label">
+    </label>
+        <%: Html.DisplayFor(model => model.TheaterName) %><br />
+
+    <label style="width:120px">
         <%: Html.DisplayNameFor(model => model.Address) %>
-    </div>
-    <div class="display-field">
-        <%: Html.DisplayFor(model => model.Address) %>
-    </div>
+    </label>
+        <%: Html.DisplayFor(model => model.Address) %><br />
 
-    <div class="display-label">
+    <label style="width:120px">
         <%: Html.DisplayNameFor(model => model.NumberOfSeats) %>
-    </div>
-    <div class="display-field">
-        <%: Html.DisplayFor(model => model.NumberOfSeats) %>
-    </div>
+    </label>
+        <%: Html.DisplayFor(model => model.NumberOfSeats) %><br />
 
-    <div class="display-label">
+    <label style="width:120px">
         <%: Html.DisplayNameFor(model => model.TotalPaied) %>
-    </div>
-    <div class="display-field">
-        <%: Html.DisplayFor(model => model.TotalPaied) %>
-    </div>
-    <div class="display-label">
+    </label>
+        <%: Html.DisplayFor(model => model.TotalPaied) %><br />
+
+    <label style="width:120px">
         <%: Html.DisplayNameFor(model => model.Email) %>
-    </div>
-    <div class="display-field">
-        <%: Html.DisplayFor(model => model.Email) %>
-    </div>
-    <div class="display-label">
+    </label>
+        <%: Html.DisplayFor(model => model.Email) %><br />
+
+    <label style="width:120px">
         <%: Html.DisplayNameFor(model => model.SubmitDate) %>
-    </div>
-    <div class="display-field">
-        <%: Html.DisplayFor(model => model.SubmitDate) %>
-    </div>
+    </label>
+        <%: Html.DisplayFor(model => model.SubmitDate) %><br />
 
-    <div class="display-label">
+    <label style="width:120px">
         <%: Html.DisplayNameFor(model => model.SubmitTime) %>
-    </div>
-    <div class="display-field">
-        <%: Html.DisplayFor(model => model.SubmitTime) %>
-    </div>
+    </label>
+        <%: Html.DisplayFor(model => model.SubmitTime) %><br />
 
-    <div class="display-label">
+    <label style="width:120px">
         <%: Html.DisplayNameFor(model => model.Status) %>
-    </div>
-    <div class="display-field">
-        <%: Html.DisplayFor(model => model.Status) %>
-    </div>
+    </label>
+        <%: Html.DisplayFor(model => model.Status) %><br />
 </fieldset>
 <p>
-
+    <%if (Model.Status.Equals("V") && (Model.Date.CompareTo(DateTime.Now) > 0))
+      {%>
     <button><%: Html.ActionLink("Cancel", "Cancel", new { id=Model.ReserveId }) %></button>
+    <%} %>
 </p>
 
 </asp:Content>
