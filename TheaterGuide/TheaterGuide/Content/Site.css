@@ -44,3 +44,30 @@
     margin-bottom:25px;
 
 }
+.autocenter {
+
+    width:350px;
+    position:relative;
+    margin:auto;
+}
+.center {
+    
+    margin-top:10px;
+    text-align:center;
+    position:relative;
+    margin:auto;
+    
+}
+.mapit {
+    font-size:20px;
+    text-shadow:#429a9a;
+  
+    font-family:Arial,Helvetica,sans-serif;
+}
+.aboutcenter {
+    width:550px;
+    margin-top:10px;   
+    position:relative;
+    margin:auto;
+    
+}

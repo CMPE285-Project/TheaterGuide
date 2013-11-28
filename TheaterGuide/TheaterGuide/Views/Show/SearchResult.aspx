@@ -6,14 +6,14 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>Search Result</h2>
+    <h1>Search Result</h1>
 
     <table class="table table-bordered" style="margin-top: 20px">
         <tr>
             <th class="col-sm-2"></th>
-            <th class="col-sm-8">Information
+            <th class="col-sm-8 " style="font-size:20px; text-align :center"> Information
             </th>
-            <th>Action
+            <th style="font-size:20px">Action
             </th>
         </tr>
 
@@ -25,17 +25,17 @@
                 <br />
                 <%: Html.DisplayFor(modelItem => item.TheaterName) %>
             </td>
-            <td>Movie Name: <%: Html.DisplayFor(modelItem => item.MovieName) %>
+            <td> <b>Movie Name:</b> <%: Html.DisplayFor(modelItem => item.MovieName) %>
                 <br />
-                Address: <%: Html.DisplayFor(modelItem => item.Address) %>, 
+               <b> Address:</b> <%: Html.DisplayFor(modelItem => item.Address) %>, 
                         <%: Html.DisplayFor(modelItem => item.City) %>
                 <br />
-                Price: <%: Html.DisplayFor(modelItem => item.Price) %>
+                <b>Price:</b> <%: Html.DisplayFor(modelItem => item.Price) %>
                 <br />
-                Time: <%: Html.DisplayFor(modelItem => item.BeginTime) %>, 
+               <b> Time:</b> <%: Html.DisplayFor(modelItem => item.BeginTime) %>, 
                 <%: Html.DisplayFor(modelItem => item.Date) %>
                 <br />
-                Available Seats: <%: Html.DisplayFor(modelItem => item.AvailableSeat) %>
+              <b>  Available Seats:</b> <%: Html.DisplayFor(modelItem => item.AvailableSeat) %>
                 <br />
                 <%if(item.Discount < 1) {%>
                 <span style="color:#ce2e2e">Discount: <%: Html.DisplayFor(modelItem => item.Discount)%></span>
@@ -52,7 +52,7 @@
                 <% }
                    } %>
                 <br />
-                <a href="<%:item.Address%>,<%:item.City %>,<%:item.State %>" data-toggle="modal" data-target="#myModal" class="myMap">Map It</a>
+                <a href="<%:item.Address%>,<%:item.City %>,<%:item.State %>" data-toggle="modal" data-target="#myModal" class="myMap mapit"  >Map It</a>
             </td>
         </tr>
         <% } %>

@@ -6,7 +6,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>Theaters Search</h2>
+    <h1>Theaters Search</h1>
     <div class="functionPicture">
      <% using (Html.BeginForm())
        { %>
@@ -38,16 +38,16 @@
             </td>
             <td>
             
-               Address: <%: Html.DisplayFor(modelItem => item.Address) %>, 
+              <b> Address:</b> <%: Html.DisplayFor(modelItem => item.Address) %>, 
                         <%: Html.DisplayFor(modelItem => item.City) %>
                <br />
-               Phone: <%: Html.DisplayFor(modelItem => item.Phone) %>
+               <b> Phone:</b> <%: Html.DisplayFor(modelItem => item.Phone) %>
                <br />
-               Hours: <%: Html.DisplayFor(modelItem => item.Hours) %>
+               <b> Hours:</b> <%: Html.DisplayFor(modelItem => item.Hours) %>
                <br />
-               Price Range: <%: Html.DisplayFor(modelItem => item.PriceRange) %>
+               <b> Price Range:</b> <%: Html.DisplayFor(modelItem => item.PriceRange) %>
                <br />
-               Rating: <%: Html.DisplayFor(modelItem => item.Rating) %>
+               <b> Rating:</b> <%: Html.DisplayFor(modelItem => item.Rating) %>
                <br />
                <%: Html.DisplayFor(modelItem => item.WebSite) %>
             </td>

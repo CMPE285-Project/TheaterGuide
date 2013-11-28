@@ -5,9 +5,10 @@
 </asp:Content>
 
 <asp:Content ID="contactContent" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="center">
     <hgroup class="title">
         <h1>Contact.</h1>
-        <h2><%: ViewBag.Message %></h2>
+        
     </hgroup>
     <section class="contact">
         <header>
@@ -23,7 +24,7 @@
         </p>
     </section>
 
-    <section class="contact">
+    <section class="contact" >
         <header>
             <h3>Email:</h3>
         </header>
@@ -50,4 +51,5 @@
             Redmond, WA 98052-6399
         </p>
     </section>
+        </div>
 </asp:Content>

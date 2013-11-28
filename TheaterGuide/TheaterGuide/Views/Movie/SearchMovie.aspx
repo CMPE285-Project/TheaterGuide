@@ -6,7 +6,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 <div class="functionPicture">
-<h2>Search Movie</h2>
+<h1>Search Movie</h1>
     <% using (Html.BeginForm())
        { %>
      Movie Name: 
@@ -18,10 +18,10 @@
 <% foreach (var item in Model) { %>
     <img src="http://placehold.it/100x150" class="functionPicture" />
     <div class="functionDescription">
-       Name: <%: item.Name %><br/>
-       Rating: <%: item.Rating %><br/>
-       Description: <%: item.Description %><br/>
-       Director: <%: item.Director %><br/>
+      <b> Name:</b> <%: item.Name %><br/>
+       <b>Rating:</b> <%: item.Rating %><br/>
+      <b> Description:</b> <%: item.Description %><br/>
+      <b> Director:</b> <%: item.Director %><br/>
        <%: Html.ActionLink("Go to Reserve",  "SearchResult", "Show", new { theaterId=0, searchString=String.Empty, movieId=item.MovieId }, null) %>
     </div>
 <% } %>

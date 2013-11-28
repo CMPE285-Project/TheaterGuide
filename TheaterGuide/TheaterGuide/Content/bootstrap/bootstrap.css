@@ -275,6 +275,7 @@ table {
     h2,
     h3 {
         page-break-after: avoid;
+        
     }
 
     select {
@@ -569,6 +570,9 @@ h6 {
 h1,
 .h1 {
     font-size: 36px;
+    text-align:center;
+    
+     text-shadow: 5px 5px 5px #FF0000;
 }
 
 h2,
@@ -579,6 +583,7 @@ h2,
 h3,
 .h3 {
     font-size: 24px;
+    text-align:center;
 }
 
 h4,

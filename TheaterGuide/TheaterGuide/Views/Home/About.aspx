@@ -5,34 +5,54 @@
 </asp:Content>
 
 <asp:Content ID="aboutContent" ContentPlaceHolderID="MainContent" runat="server">
+    
     <hgroup class="title">
         <h1>About.</h1>
-        <h2><%: ViewBag.Message %></h2>
+        
     </hgroup>
-
-    <article>
+    <div class="aboutcenter">
+   
         <p>
-            Use this area to provide additional information.
+            This system is focus on seaching moving or theater.
+        </p>
+           <p>
+            There are different role to login to complete manage the whole sysytem.
+        </p>
+       <p>
+            The customer can search theater by theater name .
+         </p>
+        
+
+        <p>
+            The address of the theater will clearly display on map.
+        </p>
+       <p>
+            The customer can make a reservation on this website.
+        </p>
+        <p>
+            This system offers account mangement where you can view or edit reserved movies.
         </p>
 
-        <p>
-            Use this area to provide additional information.
-        </p>
-
-        <p>
-            Use this area to provide additional information.
-        </p>
-    </article>
-
+        
+       <p>
+            Once you make a reservation ,the system will send you a confirm letter by email.
+         </p><br>
+       <p><b>
+            Team member: Xun Lan , Zhang Chi , Xueyin Wang , Shuang Liu.
+           </b>
+         </p>
+    
+        </div>
+        
     <aside>
-        <h3>Aside Title</h3>
-        <p>
-            Use this area to provide additional information.
-        </p>
-        <ul>
-            <li><%: Html.ActionLink("Home", "Index", "Home") %></li>
-            <li><%: Html.ActionLink("About", "About", "Home") %></li>
-            <li><%: Html.ActionLink("Contact", "Contact", "Home") %></li>
-        </ul>
+        <div class="center">
+        <h3 >Quick Link</h3>
+        
+            <p><%: Html.ActionLink("Home", "Index", "Home") %></p>
+            <p><%: Html.ActionLink("About", "About", "Home") %></p>
+            <p><%: Html.ActionLink("Contact", "Contact", "Home") %></p>
+        
+        </div>
     </aside>
+        
 </asp:Content>

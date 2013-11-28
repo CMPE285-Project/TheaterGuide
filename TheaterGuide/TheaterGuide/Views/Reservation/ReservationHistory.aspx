@@ -6,7 +6,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Reservation History</h2>
+<h1>Reservation History</h1>
 <table class="table table-striped" style="margin-top:20px">
     <tr>
         <th>

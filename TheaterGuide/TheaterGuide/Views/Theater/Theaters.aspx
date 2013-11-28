@@ -20,8 +20,9 @@
 
     <input type="submit" value="Search" />
     <% } %>
+    <br>
 
-    <table class="table table-striped" style="margin-top:20px">
+    <table class="table table-striped" style="margin-top:20px; margin:auto;">
         <tr>
             <th>
                 <%: Html.DisplayNameFor(model => model.Name) %>
@@ -90,8 +91,8 @@
                 <%: Html.DisplayFor(modelItem => item.WebSite) %>
             </td>
             <td>
-                <%: Html.ActionLink("Edit", "Edit", new { id=item.TheaterId }) %> |
-            <%: Html.ActionLink("Details", "Details", new { id=item.TheaterId }) %> |
+                <%: Html.ActionLink("Edit", "Edit", new { id=item.TheaterId }) %> <br>
+            <%: Html.ActionLink("Details", "Details", new { id=item.TheaterId }) %> <br>
             <%: Html.ActionLink("Delete", "Delete", new { id=item.TheaterId }) %> 
             </td>
         </tr>

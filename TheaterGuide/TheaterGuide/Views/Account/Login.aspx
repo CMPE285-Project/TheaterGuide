@@ -5,12 +5,13 @@
 </asp:Content>
 
 <asp:Content ID="loginContent" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="autocenter">
     <hgroup class="title">
         <h1>Log in</h1>
     </hgroup>
 
     <section id="loginForm">
-    <h2>Use a local account to log in</h2>
+    
     <% using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) { %>
         <%: Html.AntiForgeryToken() %>
         <%: Html.ValidationSummary(null, new { style="color:#f00"})%>
@@ -39,7 +40,7 @@
         </p>
     <% } %>
     </section>
-
+  </div>
 </asp:Content>
 
 <asp:Content ID="scriptsContent" ContentPlaceHolderID="ScriptsSection" runat="server">
