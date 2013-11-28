@@ -39,7 +39,9 @@
             <td>
             
               <b> Address:</b> <%: Html.DisplayFor(modelItem => item.Address) %>, 
-                        <%: Html.DisplayFor(modelItem => item.City) %>
+                        <%: Html.DisplayFor(modelItem => item.City) %>,
+                        <%: Html.DisplayFor(modelItem => item.State) %>,
+                        <%: Html.DisplayFor(modelItem => item.Zip) %>
                <br />
                <b> Phone:</b> <%: Html.DisplayFor(modelItem => item.Phone) %>
                <br />

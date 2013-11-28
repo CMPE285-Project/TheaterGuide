@@ -10,7 +10,6 @@ using TheaterGuide.Models;
 
 namespace TheaterGuide.Controllers
 {
-    [InitializeSimpleMembership]
     public class ShowController : Controller
     {
         private UsersContext db = new UsersContext();
@@ -100,6 +99,7 @@ namespace TheaterGuide.Controllers
 
         //
         // GET: /Show/
+        [Authorize(Roles = "admin")]
         public ActionResult Shows(int id = 0, string searchString = null)
         {
             ViewBag.TheaterLst = GetTheaterLst();
@@ -108,7 +108,7 @@ namespace TheaterGuide.Controllers
 
         //
         // GET: /Show/Details/5
-
+        [Authorize(Roles = "admin")]
         public ActionResult Details(int id = 0)
         {
             ShowModels showmodels = db.Shows.Find(id);
@@ -121,7 +121,7 @@ namespace TheaterGuide.Controllers
 
         //
         // GET: /Show/Create
-
+        [Authorize(Roles = "admin")]
         public ActionResult Create()
         {
             ViewBag.TheaterLst = GetTheaterLst();
@@ -131,7 +131,7 @@ namespace TheaterGuide.Controllers
 
         //
         // POST: /Show/Create
-
+        [Authorize(Roles = "admin")]
         [HttpPost]
         public ActionResult Create(ShowModels showmodels)
         {
@@ -147,7 +147,7 @@ namespace TheaterGuide.Controllers
 
         //
         // GET: /Show/Edit/5
-
+        [Authorize(Roles = "admin")]
         public ActionResult Edit(int id = 0)
         {
             ShowModels showmodels = db.Shows.Find(id);
@@ -160,7 +160,7 @@ namespace TheaterGuide.Controllers
 
         //
         // POST: /Show/Edit/5
-
+        [Authorize(Roles = "admin")]
         [HttpPost]
         public ActionResult Edit(ShowModels showmodels)
         {
@@ -175,7 +175,7 @@ namespace TheaterGuide.Controllers
 
         //
         // GET: /Show/Delete/5
-
+        [Authorize(Roles = "admin")]
         public ActionResult Delete(int id = 0)
         {
             ShowModels showmodels = db.Shows.Find(id);
@@ -188,7 +188,7 @@ namespace TheaterGuide.Controllers
 
         //
         // POST: /Show/Delete/5
-
+        [Authorize(Roles = "admin")]
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
@@ -196,12 +196,6 @@ namespace TheaterGuide.Controllers
             db.Shows.Remove(showmodels);
             db.SaveChanges();
             return RedirectToAction("Shows");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            db.Dispose();
-            base.Dispose(disposing);
         }
     }
 }

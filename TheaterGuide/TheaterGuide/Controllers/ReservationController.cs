@@ -14,8 +14,6 @@ using TheaterGuide.Models;
 
 namespace TheaterGuide.Controllers
 {
-    [Authorize]
-    [InitializeSimpleMembership]
     public class ReservationController : Controller
     {
         private UsersContext db = new UsersContext();
@@ -42,12 +40,12 @@ namespace TheaterGuide.Controllers
 
         //
         // GET: /Reservation/
-
+        [Authorize(Roles = "admin")]
         public ActionResult Reservations(string status=null, int id=0)
         {
             return View(search(0, status, id));
         }
-
+        [Authorize]
         public ActionResult ReservationHistory()
         {
             return View(search(WebSecurity.GetUserId(User.Identity.Name)));
@@ -55,11 +53,11 @@ namespace TheaterGuide.Controllers
 
         //
         // GET: /Reservation/Details/5
-
+        [Authorize]
         public ActionResult Details(int id = 0)
         {
             ReservationModels rm = db.Reservations.Find(id);
-            if (rm == null)
+            if (rm == null || (!User.IsInRole("admin") && WebSecurity.GetUserId(User.Identity.Name) != rm.UserId))
             {
                 return HttpNotFound();
             }
@@ -68,7 +66,7 @@ namespace TheaterGuide.Controllers
 
         //
         // GET: /Reservation/Create
-        
+        [Authorize]
         public ActionResult Create(int id, int seats)
         {
             ViewBag.ReturnUrl = Url.Action("Create", new { id, seats});
@@ -92,7 +90,6 @@ namespace TheaterGuide.Controllers
             model.TotalPaied = TotalPrice;
             model.Email = db.UserProfiles.Find(model.UserId).Email;
 
-
             if (show.AvailableSeat < seats)
             {
                 ViewBag.Success = false;
@@ -104,7 +101,7 @@ namespace TheaterGuide.Controllers
 
             return View(model);
         }
-
+        [Authorize]
         [HttpPost]
         public ActionResult Create(ReservationModels reserve)
         {
@@ -139,20 +136,25 @@ namespace TheaterGuide.Controllers
 
         //
         // GET: /Reservation/Canel/5
-
+        [Authorize]
         public ActionResult Cancel(int id = 0)
         {
             ReservationModels reservationmodels = db.Reservations.Find(id);
-            if (reservationmodels == null)
+            ViewBag.InvalidOperation = false;
+            if (reservationmodels == null || (!User.IsInRole("admin") && WebSecurity.GetUserId(User.Identity.Name) != reservationmodels.UserId))
             {
                 return HttpNotFound();
+            }
+            else if (reservationmodels.Status == "C" || (!User.IsInRole("admin") && reservationmodels.Date <= DateTime.Now))
+            {
+                ViewBag.InvalidOperation = true;
             }
             return View(reservationmodels);
         }
 
         //
-        // POST: /Reservation/Edit/5
-
+        // POST: /Reservation/Cancel/5
+        [Authorize]
         [HttpPost]
         public ActionResult Cancel(ReservationModels reservationmodels)
         {
@@ -165,14 +167,17 @@ namespace TheaterGuide.Controllers
                 db.Entry(reservationmodels).State = EntityState.Modified;
                 db.Entry(show).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("AccountInfo", "Account", new { Message = AccountController.ManageMessageId.CancelReservationSuccess });
+                if (User.IsInRole("admin"))
+                    return RedirectToAction("Reservations");
+                else
+                    return RedirectToAction("AccountInfo", "Account", new { Message = AccountController.ManageMessageId.CancelReservationSuccess });
             }
             return View(reservationmodels);
         }
 
         //
         // GET: /Reservation/Delete/5
-
+        [Authorize(Roles = "admin")]
         public ActionResult Delete(int id = 0)
         {
             ReservationModels reservationmodels = db.Reservations.Find(id);
@@ -185,7 +190,7 @@ namespace TheaterGuide.Controllers
 
         //
         // POST: /Reservation/Delete/5
-
+        [Authorize(Roles = "admin")]
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
@@ -193,12 +198,6 @@ namespace TheaterGuide.Controllers
             db.Reservations.Remove(reservationmodels);
             db.SaveChanges();
             return RedirectToAction("Reservations");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            db.Dispose();
-            base.Dispose(disposing);
         }
 
         // send email helper

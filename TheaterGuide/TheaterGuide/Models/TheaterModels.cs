@@ -48,29 +48,4 @@ namespace TheaterGuide.Models
 
         public List<ShowModels> Shows { get; set; }
     }
-/*
-    public class TheaterViewModel
-    {
-        [Required]
-        public int TheaterId { get; set; }
-        [Required]
-        [Display(Name = "Theater")]
-        public string Name { get; set; }
-        [Required]
-        public string Address { get; set; }
-        [Required]
-        [DisplayFormat(DataFormatString = "{0:C}")]
-        public double Price { get; set; }
-        [Required]
-        [Display(Name = "Begin Time")]
-        public string BeginTime { get; set; }
-        [Required]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:d}")]
-        public DateTime Date { get; set; }
-        [Display(Name = "Available Seat")]
-        public int AvailableSeat { get; set; }
-        public double Discount { get; set; }
-    }
- */ 
 }

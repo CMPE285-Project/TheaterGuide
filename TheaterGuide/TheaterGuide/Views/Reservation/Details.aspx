@@ -40,7 +40,14 @@
         <%: Html.DisplayNameFor(model => model.TotalPaied) %>
     </label>
         <%: Html.DisplayFor(model => model.TotalPaied) %><br />
-
+    <label style="width:120px">
+        <%: Html.DisplayNameFor(model => model.Date) %>
+    </label>
+        <%: Html.DisplayFor(model => model.Date) %><br />
+    <label style="width:120px">
+        <%: Html.DisplayNameFor(model => model.BeginTime) %>
+    </label>
+        <%: Html.DisplayFor(model => model.BeginTime) %><br />
     <label style="width:120px">
         <%: Html.DisplayNameFor(model => model.Email) %>
     </label>
@@ -59,7 +66,11 @@
     <label style="width:120px">
         <%: Html.DisplayNameFor(model => model.Status) %>
     </label>
-        <%: Html.DisplayFor(model => model.Status) %><br />
+        <% if(Model.Status.Equals("V")) { %>
+                Reserved
+            <%} else {%>
+                Cancelled
+            <%} %><br />
 </fieldset>
 <p>
     <%if (Model.Status.Equals("V") && (Model.Date.CompareTo(DateTime.Now) > 0))

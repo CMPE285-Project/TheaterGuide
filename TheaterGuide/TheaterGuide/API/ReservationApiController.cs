@@ -19,6 +19,7 @@ namespace TheaterGuide.API
         private UsersContext db = new UsersContext();
 
         // GET api/ReservationApi/{}
+        //[BasicHttpAuthorizeAttribute(RequireAuthentication = true)]
         public ReservationModels GetReservationModels(int id)
         {
             ReservationModels reservationmodels = db.Reservations.Find(id);

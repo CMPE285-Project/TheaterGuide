@@ -5,26 +5,29 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-<div class="functionPicture">
-<h1>Search Movie</h1>
-    <% using (Html.BeginForm())
-       { %>
+    <h1>Search Movie</h1>
+    <div class="functionPicture">        
+        <% using (Html.BeginForm())
+           { %>
      Movie Name: 
         <%: Html.TextBox("SearchString") %>
-    
-    <input type="submit" value="Search" />
-<% } %>
-</div>
-<% foreach (var item in Model) { %>
+
+        <input type="submit" value="Search" />
+        <% } %>
+    </div>
+    <% foreach (var item in Model)
+       { %>
     <img src="http://placehold.it/100x150" class="functionPicture" />
     <div class="functionDescription">
-      <b> Name:</b> <%: item.Name %><br/>
-       <b>Rating:</b> <%: item.Rating %><br/>
-      <b> Description:</b> <%: item.Description %><br/>
-      <b> Director:</b> <%: item.Director %><br/>
-       <%: Html.ActionLink("Go to Reserve",  "SearchResult", "Show", new { theaterId=0, searchString=String.Empty, movieId=item.MovieId }, null) %>
+        <b>Name:</b> <%: item.Name %><br />
+        <b>Rating:</b> <%: item.Rating %><br />
+        <b>Run Time (mins):</b> <%: item.RunTime %><br />
+        <b>Release Date:</b> <%: item.ReleaseDate.ToShortDateString() %><br />
+        <b>Description:</b> <%: item.Description %><br />
+        <b>Director:</b> <%: item.Director %><br />
+        <%: Html.ActionLink("Go to Reserve",  "SearchResult", "Show", new { theaterId=0, searchString=String.Empty, movieId=item.MovieId }, null) %>
     </div>
-<% } %>
+    <% } %>
 </asp:Content>
 
 

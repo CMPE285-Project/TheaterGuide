@@ -6,7 +6,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h1>Search Result</h1>
+    <h1>Show List</h1>
 
     <table class="table table-bordered" style="margin-top: 20px">
         <tr>
