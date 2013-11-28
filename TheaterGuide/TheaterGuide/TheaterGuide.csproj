@@ -159,6 +159,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\MovieApiController.cs" />
+    <Compile Include="API\ReservationApiController.cs" />
+    <Compile Include="API\ShowApiController.cs" />
+    <Compile Include="API\TheaterApiController.cs" />
+    <Compile Include="API\UserApiController.cs" />
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />

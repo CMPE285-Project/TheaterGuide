@@ -27,19 +27,19 @@ namespace TheaterGuide.Models
         [Required]
         [Display(Name = "Begin Time")]
         public string BeginTime { get; set; }
-        [Required]
+        //[Required]
         [DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime Date { get; set; }
-        [Required]
+        //[Required]
         [Display(Name = "Number of Seat")]
         public int NumberOfSeats { get; set; }
-        [Required]
+        //[Required]
         [DisplayFormat(DataFormatString = "{0:C}")]
         [Display(Name = "Total Price")]
         public double TotalPaied { get; set; }
         [Required]
         public string Email { get; set; }
-        [Required]
+        //[Required]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:d}")]
         [Display(Name = "Submit Date")]

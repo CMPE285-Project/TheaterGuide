@@ -1,0 +1,39 @@
+API Instruction:
+
+MovieApi:
+[GET] [/api/MovieApi] retrieve all movies
+[GET] [/api/MovieApi/{id}] retrieve movie by MovieId
+[GET] [/api/MovieApi/Search?searchString={s}] retrieve movies whose name contains the searchString
+
+TheaterApi:
+[GET] [/api/TheaterApi] retrieve all theaters
+[GET] [/api/TheaterApi/{id}] retrieve theater by TheaterId
+[GET] [api/TheaterApi/Search?searchString={s}] retrieve theaters whose name contains the searchString
+
+ShowApi:
+[GET] [/api/ShowApi] retrieve all shows
+[GET] [/api/ShowApi/Search?theaterId={}&movieId={}&showId={}] retrieve shows by TheaterId/MovieId/ShowId, select conditions are optional
+
+ReservationApi:
+[GET] [/api/ReservationApi/{id}] retrieve reservation by ReserveId
+[GET] [/api/ReservationApi/Search?userId={}] retrieve reservations by UserId
+
+[PATCH] [/api/ReservationApi/{id}] cancel reservation by ReserveId
+-CustomErrorCode 35 : Invalid cancel operation
+
+[POST] [/api/ReservationApi] new reservation
+-CustomErrorCode 36 : show doesn't exist
+-CustomErrorCode 37 : show date has passed
+-CustomErrorCode 38 : unknown failure
+-CustomErrorCode 39 : not enough available seats
+-Json data example:
+{
+ "UserId": 1,
+ "ShowId": 2,
+ "MovieName": "M",
+ "TheaterName": "T",
+ "Address": "street #, city, CA, 91123",
+ "NumberOfSeats": 1,
+ "TotalPaied": 34,
+ "Email": "AAA@gmail.com"
+}
