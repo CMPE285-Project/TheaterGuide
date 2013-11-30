@@ -14,7 +14,7 @@ ShowApi:
 [GET] [/api/ShowApi] retrieve all shows
 [GET] [/api/ShowApi/Search?theaterId={}&movieId={}&showId={}] retrieve shows by TheaterId/MovieId/ShowId, select conditions are optional
 
-ReservationApi:
+ReservationApi: need Authorization header to work
 [GET] [/api/ReservationApi/{id}] retrieve reservation by ReserveId
 [GET] [/api/ReservationApi/Search?userId={}] retrieve reservations by UserId
 
@@ -34,6 +34,9 @@ ReservationApi:
  "TheaterName": "T",
  "Address": "street #, city, CA, 91123",
  "NumberOfSeats": 1,
- "TotalPaied": 34,
- "Email": "AAA@gmail.com"
+ "TotalPaied": 34
 }
+
+Authorization API(HTTP Basic authentication)
+[Httprequest Header]  Authorization: Basic TGFuOjExMTExMQ==
+The encoded part is the base64 string of username:password, in this case, it is the encoded string of Lan:111111
