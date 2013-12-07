@@ -12,66 +12,66 @@
 <fieldset>
     <legend></legend>
 
-    <div class="display-label">
+    <div class="col-sm-2">
         <%: Html.DisplayNameFor(model => model.ReserveId) %>
     </div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.ReserveId) %>
     </div>
 
-    <div class="display-label">
+    <div class="col-sm-2">
         <%: Html.DisplayNameFor(model => model.MovieName) %>
     </div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.MovieName) %>
     </div>
-    <div class="display-label">
+    <div class="col-sm-2">
         <%: Html.DisplayNameFor(model => model.TheaterName) %>
     </div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.TheaterName) %>
     </div>
-    <div class="display-label">
+    <div class="col-sm-2">
         <%: Html.DisplayNameFor(model => model.Address) %>
     </div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.Address) %>
     </div>
 
-    <div class="display-label">
+    <div class="col-sm-2">
         <%: Html.DisplayNameFor(model => model.NumberOfSeats) %>
     </div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.NumberOfSeats) %>
     </div>
 
-    <div class="display-label">
+    <div class="col-sm-2">
         <%: Html.DisplayNameFor(model => model.TotalPaied) %>
     </div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.TotalPaied) %>
     </div>
-    <div class="display-label">
+    <div class="col-sm-2">
         <%: Html.DisplayNameFor(model => model.Email) %>
     </div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.Email) %>
     </div>
-    <div class="display-label">
+    <div class="col-sm-2">
         <%: Html.DisplayNameFor(model => model.SubmitDate) %>
     </div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.SubmitDate) %>
     </div>
 
-    <div class="display-label">
+    <div class="col-sm-2">
         <%: Html.DisplayNameFor(model => model.SubmitTime) %>
     </div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.SubmitTime) %>
     </div>
 
-    <div class="display-label">
+    <div class="col-sm-2">
         <%: Html.DisplayNameFor(model => model.Status) %>
     </div>
     <div class="display-field">

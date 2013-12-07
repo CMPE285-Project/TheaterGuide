@@ -36,14 +36,22 @@
 .functionDescription {
     border: solid thin;
     border-color:#999;
-    float: right;
     width: 500px;
     height:150px;
+    display:table-cell;
+    vertical-align:middle;
     margin-right: 100px;
     margin-top:25px;
     margin-bottom:25px;
-
+    float: right;
 }
+
+.information {
+    font-family:'Comic Sans MS', cursive, sans-serif; 
+    vertical-align:central; 
+    font-size:20px;
+}
+
 .autocenter {
 
     width:350px;
@@ -70,4 +78,71 @@
     position:relative;
     margin:auto;
     
+}
+
+/* info and errors */
+.message-info {
+    border: 1px solid;
+    clear: both;
+    padding: 10px 20px;
+}
+
+.message-error {
+    clear: both;
+    color: #f00;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+}
+
+.message-success {
+    color: #7ac0da;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+}
+
+.error {
+    color: #f00;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #f00;
+    font-weight: bold;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #f00;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #f00;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.editor-field {
+    padding-left: 100px;
+    
+}
+
+.display-field {
+    padding-left: 100px;
+}
+
+.col-sm-2 {
+    font-weight:bold;
 }

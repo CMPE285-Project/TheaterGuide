@@ -35,7 +35,7 @@ namespace TheaterGuide.Controllers
             {
                 reserves = reserves.Where(s => s.ReserveId == reserveId);
             }
-            return reserves;
+            return reserves.OrderByDescending(s => s.ReserveId);
         }
 
         //

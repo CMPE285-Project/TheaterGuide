@@ -5,10 +5,11 @@
 </asp:Content>
 
 <asp:Content ID="registerContent" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="autocenter">
     <hgroup class="title">
         <h1>Register</h1>
-        <h2>Create a new account</h2>
     </hgroup>
+
 
     <% using (Html.BeginForm())
        { %>
@@ -19,26 +20,31 @@
         <legend></legend>
         <form role="form">
             <div class="form-group">
-                <%: Html.LabelFor(m => m.UserName) %><br/>
+                <%: Html.LabelFor(m => m.UserName, new { style="padding-right:70px"})%>
                 <%: Html.TextBoxFor(m => m.UserName) %>
             </div>
             <div class="form-group">
-                <%: Html.LabelFor(m => m.Email) %><br/>
+                <%: Html.LabelFor(m => m.Email, new { style="padding-right:47px"})%>
                 <%: Html.TextBoxFor(m => m.Email) %>
             </div>
             <div class="form-group">
-                <%: Html.LabelFor(m => m.Password) %><br/>
+                <%: Html.LabelFor(m => m.Password, new { style="padding-right:77px"})%>
                 <%: Html.PasswordFor(m => m.Password) %>
             </div>
             <div class="form-group">
-                <%: Html.LabelFor(m => m.ConfirmPassword) %><br/>
+                <%: Html.LabelFor(m => m.ConfirmPassword, new { style="padding-right:18px"})%>
                 <%: Html.PasswordFor(m => m.ConfirmPassword) %>
             </div>
 
             <input type="submit" value="Register" />
         </form>
     </fieldset>
+        <br />
+        <p>
+            <%: Html.ActionLink("Login", "Login") %> if you already have an account.
+        </p>
     <% } %>
+   </div>
 </asp:Content>
 
 <asp:Content ID="scriptsContent" ContentPlaceHolderID="ScriptsSection" runat="server">

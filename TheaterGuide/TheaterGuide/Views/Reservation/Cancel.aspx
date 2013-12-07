@@ -129,11 +129,14 @@
         <%} %>
     </fieldset>
     <% } %>
-
+     <% if (HttpContext.Current.User.IsInRole("admin"))
+      { %>
+        <%: Html.ActionLink("Back to Reservation Management", "Reservations") %>
+    <%} else {%>
     <div>
-        <%: Html.ActionLink("Back to List", "ReservationHistory") %>
+        <%: Html.ActionLink("Back to Reservation History", "ReservationHistory") %>
     </div>
-
+    <%} %>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="IndexContent" runat="server">

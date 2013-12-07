@@ -7,38 +7,22 @@
 <asp:Content ID="aboutContent" ContentPlaceHolderID="MainContent" runat="server">
     
     <hgroup class="title">
-        <h1>About.</h1>
+        <h1>About</h1>
         
     </hgroup>
-    <div class="aboutcenter">
+    <div class="aboutcenter information">
    
         <p>
-            This system is focus on seaching moving or theater.
-        </p>
-           <p>
-            There are different role to login to complete manage the whole sysytem.
+            You can seach movie or theater on this Website and make a reservation.
         </p>
        <p>
-            The customer can search theater by theater name .
+            Once you make a reservation, our system will send you a confirmation email to your registered email address.
          </p>
-        
-
         <p>
-            The address of the theater will clearly display on map.
-        </p>
-       <p>
-            The customer can make a reservation on this website.
-        </p>
-        <p>
-            This system offers account mangement where you can view or edit reserved movies.
-        </p>
-
-        
-       <p>
-            Once you make a reservation ,the system will send you a confirm letter by email.
-         </p><br>
+            Please enjoy!
+        </p><br>
        <p><b>
-            Team member: Xun Lan , Zhang Chi , Xueyin Wang , Shuang Liu.
+            Team member: Lan Xu, Chi Zhang, Xueyin Wang , Shuang Liu.
            </b>
          </p>
     

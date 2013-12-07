@@ -11,69 +11,69 @@
     <fieldset>
         <legend></legend>
 
-        <div class="display-label">
+        <div class="col-sm-2">
             <%: Html.DisplayNameFor(model => model.Name) %>
         </div>
         <div class="display-field">
             <%: Html.DisplayFor(model => model.Name) %>
         </div>
 
-        <div class="display-label">
+        <div class="col-sm-2">
             <%: Html.DisplayNameFor(model => model.Address) %>
         </div>
         <div class="display-field">
             <%: Html.DisplayFor(model => model.Address) %>
         </div>
 
-        <div class="display-label">
+        <div class="col-sm-2">
             <%: Html.DisplayNameFor(model => model.City) %>
         </div>
         <div class="display-field">
             <%: Html.DisplayFor(model => model.City) %>
         </div>
 
-        <div class="display-label">
+        <div class="col-sm-2">
             <%: Html.DisplayNameFor(model => model.State) %>
         </div>
         <div class="display-field">
             <%: Html.DisplayFor(model => model.State) %>
         </div>
 
-        <div class="display-label">
+        <div class="col-sm-2">
             <%: Html.DisplayNameFor(model => model.Zip) %>
         </div>
         <div class="display-field">
             <%: Html.DisplayFor(model => model.Zip) %>
         </div>
 
-        <div class="display-label">
+        <div class="col-sm-2">
             <%: Html.DisplayNameFor(model => model.Phone) %>
         </div>
         <div class="display-field">
             <%: Html.DisplayFor(model => model.Phone) %>
         </div>
 
-        <div class="display-label">
+        <div class="col-sm-2">
             <%: Html.DisplayNameFor(model => model.Hours) %>
         </div>
         <div class="display-field">
             <%: Html.DisplayFor(model => model.Hours) %>
         </div>
 
-        <div class="display-label">
+        <div class="col-sm-2">
             <%: Html.DisplayNameFor(model => model.PriceRange) %>
         </div>
         <div class="display-field">
             <%: Html.DisplayFor(model => model.PriceRange) %>
         </div>
 
-        <div class="display-label">
+        <div class="col-sm-2">
             <%: Html.DisplayNameFor(model => model.Rating) %>
         </div>
         <div class="display-field">
             <%: Html.DisplayFor(model => model.Rating) %>
         </div>
-        <div class="display-label">
+        <div class="col-sm-2">
             <%: Html.DisplayNameFor(model => model.WebSite) %>
         </div>
         <div class="display-field">

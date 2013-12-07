@@ -6,7 +6,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Account Management</h2>
+<h1>Account Management</h1>
     <p>You're logged in as <strong><%: User.Identity.Name %></strong>.</p>
     <p style="color:#ff6a00"><%: (string)ViewBag.StatusMessage %></p>
 

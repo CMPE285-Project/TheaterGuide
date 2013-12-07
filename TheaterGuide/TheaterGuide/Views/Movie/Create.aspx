@@ -13,45 +13,47 @@
 
     <fieldset>
         <legend></legend>
-        <div class="editor-label">
+        <div class="col-sm-2">
             <%: Html.LabelFor(model => model.Name) %>
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Name) %>
             <%: Html.ValidationMessageFor(model => model.Name) %>
         </div>
-
-        <div class="editor-label">
+        <br />
+        <div class="col-sm-2">
             <%: Html.LabelFor(model => model.Director) %>
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Director) %>
             <%: Html.ValidationMessageFor(model => model.Director) %>
         </div>
-
-        <div class="editor-label">
+        <br />
+        <div class="col-sm-2">
             <%: Html.LabelFor(model => model.Description) %>
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Description) %>
             <%: Html.ValidationMessageFor(model => model.Description) %>
         </div>
-        <div class="editor-label">
+        <br />
+        <div class="col-sm-2">
             <%: Html.LabelFor(model => model.ReleaseDate) %>
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.ReleaseDate) %>
             <%: Html.ValidationMessageFor(model => model.ReleaseDate) %>
         </div>
-
-        <div class="editor-label">
+        <br />
+        <div class="col-sm-2">
             <%: Html.LabelFor(model => model.RunTime) %>
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.RunTime) %>
             <%: Html.ValidationMessageFor(model => model.RunTime) %>
         </div>
-        <div class="editor-label">
+        <br />
+        <div class="col-sm-2">
             <%: Html.LabelFor(model => model.Rating) %>
         </div>
         <div class="editor-field">
@@ -59,12 +61,13 @@
             <%: Html.ValidationMessageFor(model => model.Rating) %>
         </div>
 
-        <p>
+        <br />
+        <div class="col-sm-2">
             <input type="submit" value="Create" />
-        </p>
+        </div>
     </fieldset>
 <% } %>
-
+    <br />
 <div>
     <%: Html.ActionLink("Back to Movie Information Management", "Movies") %>
 </div>

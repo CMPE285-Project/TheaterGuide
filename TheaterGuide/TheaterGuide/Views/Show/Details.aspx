@@ -11,49 +11,49 @@
 <fieldset>
     <legend></legend>
 
-    <div class="display-label">
+    <div class="col-sm-2">
         <%: Html.DisplayNameFor(model => model.MovieId) %>
     </div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.MovieId) %>
     </div>
 
-    <div class="display-label">
+    <div class="col-sm-2">
         <%: Html.DisplayNameFor(model => model.TheaterId) %>
     </div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.TheaterId) %>
     </div>
 
-    <div class="display-label">
+    <div class="col-sm-2">
         <%: Html.DisplayNameFor(model => model.Price) %>
     </div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.Price) %>
     </div>
 
-    <div class="display-label">
+    <div class="col-sm-2">
         <%: Html.DisplayNameFor(model => model.BeginTime) %>
     </div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.BeginTime) %>
     </div>
 
-    <div class="display-label">
+    <div class="col-sm-2">
         <%: Html.DisplayNameFor(model => model.Date) %>
     </div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.Date) %>
     </div>
 
-    <div class="display-label">
+    <div class="col-sm-2">
         <%: Html.DisplayNameFor(model => model.AvailableSeat) %>
     </div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.AvailableSeat) %>
     </div>
 
-    <div class="display-label">
+    <div class="col-sm-2">
         <%: Html.DisplayNameFor(model => model.Discount) %>
     </div>
     <div class="display-field">

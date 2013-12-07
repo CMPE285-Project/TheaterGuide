@@ -6,7 +6,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h1>Theaters Search</h1>
+    <h1>Search Theater</h1>
     <div class="functionPicture">
      <% using (Html.BeginForm())
        { %>

@@ -12,41 +12,41 @@
 <fieldset>
     <legend></legend>
 
-    <div class="display-label">
+    <div class="col-sm-2">
         <%: Html.DisplayNameFor(model => model.Name) %>
     </div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.Name) %>
     </div>
 
-    <div class="display-label">
+    <div class="col-sm-2">
         <%: Html.DisplayNameFor(model => model.Director) %>
     </div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.Director) %>
     </div>
 
-    <div class="display-label">
+    <div class="col-sm-2">
         <%: Html.DisplayNameFor(model => model.Description) %>
     </div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.Description) %>
     </div>
 
-    <div class="display-label">
+    <div class="col-sm-2">
         <%: Html.DisplayNameFor(model => model.ReleaseDate) %>
     </div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.ReleaseDate) %>
     </div>
 
-    <div class="display-label">
+    <div class="col-sm-2">
         <%: Html.DisplayNameFor(model => model.RunTime) %>
     </div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.RunTime) %>
     </div>      
-    <div class="display-label">
+    <div class="col-sm-2">
         <%: Html.DisplayNameFor(model => model.Rating) %>
     </div>
     <div class="display-field">

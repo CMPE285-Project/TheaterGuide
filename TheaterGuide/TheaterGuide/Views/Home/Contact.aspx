@@ -7,48 +7,33 @@
 <asp:Content ID="contactContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="center">
     <hgroup class="title">
-        <h1>Contact.</h1>
+        <h1>Contact</h1>
         
     </hgroup>
-    <section class="contact">
+    <section class="contact information">
         <header>
-            <h3>Phone:</h3>
+            Phone:
         </header>
         <p>
-            <span class="label">Main:</span>
-            <span>425.555.0100</span>
-        </p>
-        <p>
-            <span class="label">After Hours:</span>
-            <span>425.555.0199</span>
+            <span>888-888-8888</span>
         </p>
     </section>
 
-    <section class="contact" >
+    <section class="contact information" >
         <header>
-            <h3>Email:</h3>
+           Email:
         </header>
         <p>
-            <span class="label">Support:</span>
-            <span><a href="mailto:Support@example.com">Support@example.com</a></span>
-        </p>
-        <p>
-            <span class="label">Marketing:</span>
-            <span><a href="mailto:Marketing@example.com">Marketing@example.com</a></span>
-        </p>
-        <p>
-            <span class="label">General:</span>
-            <span><a href="mailto:General@example.com">General@example.com</a></span>
+            <span><a href="mailto:theater_guide@example.com">theater_guide@example.com</a></span>
         </p>
     </section>
 
-    <section class="contact">
+    <section class="contact information">
         <header>
-            <h3>Address:</h3>
+            Address:
         </header>
-        <p>
-            One Microsoft Way<br />
-            Redmond, WA 98052-6399
+        <p>One Washington Square<br />
+            San Jose, CA 95192
         </p>
     </section>
         </div>

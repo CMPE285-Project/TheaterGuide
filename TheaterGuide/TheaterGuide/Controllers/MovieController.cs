@@ -25,7 +25,7 @@ namespace TheaterGuide.Controllers
                 movies = movies.Where(s => s.Name.Contains(searchString));
             }
 
-            return movies;
+            return movies.OrderByDescending(s => s.MovieId);
         }
 
         //search movie info by customers

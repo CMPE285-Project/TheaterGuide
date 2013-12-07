@@ -88,7 +88,7 @@ namespace TheaterGuide.Controllers
             {
                 shows = shows.Where(s => s.Date.Equals((DateTime)date));
             }
-            return shows;
+            return shows.OrderByDescending(s => s.ShowId);
         }
 
         // Search by costomers via home page

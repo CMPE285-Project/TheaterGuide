@@ -26,7 +26,7 @@ namespace TheaterGuide.Controllers
                 theaters = theaters.Where(s => s.Name.Contains(searchString));
             }
 
-            return theaters;
+            return theaters.OrderByDescending(s => s.TheaterId);
         }
 
         // search by admin

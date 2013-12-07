@@ -14,92 +14,92 @@
     <fieldset>
         <legend></legend>
 
-        <div class="editor-label">
+        <div class="col-sm-2">
             <%: Html.LabelFor(model => model.Name) %>
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Name) %>
             <%: Html.ValidationMessageFor(model => model.Name) %>
         </div>
-
-        <div class="editor-label">
+        <br />
+        <div class="col-sm-2">
             <%: Html.LabelFor(model => model.Address) %>
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Address) %>
             <%: Html.ValidationMessageFor(model => model.Address) %>
         </div>
-
-        <div class="editor-label">
+        <br />
+        <div class="col-sm-2">
             <%: Html.LabelFor(model => model.City) %>
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.City) %>
             <%: Html.ValidationMessageFor(model => model.City) %>
         </div>
-
-        <div class="editor-label">
+        <br />
+        <div class="col-sm-2">
             <%: Html.LabelFor(model => model.State) %>
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.State) %>
             <%: Html.ValidationMessageFor(model => model.State) %>
         </div>
-
-        <div class="editor-label">
+        <br />
+        <div class="col-sm-2">
             <%: Html.LabelFor(model => model.Zip) %>
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Zip) %>
             <%: Html.ValidationMessageFor(model => model.Zip) %>
         </div>
-
-        <div class="editor-label">
+        <br />
+        <div class="col-sm-2">
             <%: Html.LabelFor(model => model.Phone) %>
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Phone) %>
             <%: Html.ValidationMessageFor(model => model.Phone) %>
         </div>
-
-        <div class="editor-label">
+        <br />
+        <div class="col-sm-2">
             <%: Html.LabelFor(model => model.Hours) %>
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Hours) %>
             <%: Html.ValidationMessageFor(model => model.Hours) %>
         </div>
-
-        <div class="editor-label">
+        <br />
+        <div class="col-sm-2">
             <%: Html.LabelFor(model => model.PriceRange) %>
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.PriceRange) %>
             <%: Html.ValidationMessageFor(model => model.PriceRange) %>
         </div>
-
-        <div class="editor-label">
+        <br />
+        <div class="col-sm-2">
             <%: Html.LabelFor(model => model.Rating) %>
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Rating) %>
             <%: Html.ValidationMessageFor(model => model.Rating) %>
         </div>
-
-        <div class="editor-label">
+        <br />
+        <div class="col-sm-2">
             <%: Html.LabelFor(model => model.WebSite) %>
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.WebSite) %>
             <%: Html.ValidationMessageFor(model => model.WebSite) %>
         </div>
-
-        <p>
+        <br />
+        <div class="col-sm-2">
             <input type="submit" value="Create" />
-        </p>
+        </div>
     </fieldset>
 <% } %>
-
+    <br />
 <div>
     <%: Html.ActionLink("Back to Theater Information Management", "Theaters") %>
 </div>
