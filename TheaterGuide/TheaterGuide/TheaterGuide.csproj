@@ -263,9 +263,16 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Properties\PublishProfiles\TheaterGuide - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\TheaterGuide - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Images\enders-game-movie-wallpaper-and-poster.jpg" />
+    <Content Include="Images\free-birds05_副本.jpg" />
+    <Content Include="Images\locate-feature_副本.png" />
+    <Content Include="Images\movies_副本.jpg" />
+    <Content Include="Images\mzl.qqkpcjgs.175x175-75_副本.jpg" />
     <Content Include="Images\stars.png" />
+    <Content Include="Images\Thor 2 The Dark World Movie widescreen HD Wallpaper Image Picture Photo Backgrounds_副本.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
@@ -285,7 +292,7 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
-    <Content Include="Scripts\star.js" />
+    <Content Include="Scripts\helper.js" />
     <Content Include="Views\Account\AccountInfo.aspx" />
     <Content Include="Views\Account\SiteMgmt.aspx" />
     <Content Include="Views\Account\_ChangeEmailPartial.ascx" />

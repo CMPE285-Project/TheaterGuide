@@ -6,10 +6,10 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Search Movie</h1>
-    <div class="functionPicture">        
+    <div style="padding-top: 1em; padding-bottom: 1em; text-align: center">      
         <% using (Html.BeginForm())
            { %>
-     Movie Name: 
+     <b>Movie Name </b>
         <%: Html.TextBox("SearchString") %>
 
         <input type="submit" value="Search" />

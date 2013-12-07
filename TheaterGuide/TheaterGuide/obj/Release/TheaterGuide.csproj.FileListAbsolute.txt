@@ -50,3 +50,4 @@
 \\psf\Home\Documents\SJSU\Project\GitHub\TheaterGuide\TheaterGuide\TheaterGuide\obj\Release\TheaterGuide.csproj.GenerateResource.Cache
 \\psf\Home\Documents\SJSU\Project\GitHub\TheaterGuide\TheaterGuide\TheaterGuide\obj\Release\TheaterGuide.dll
 \\psf\Home\Documents\SJSU\Project\GitHub\TheaterGuide\TheaterGuide\TheaterGuide\obj\Release\TheaterGuide.pdb
+\\psf\Home\Documents\SJSU\Project\GitHub\TheaterGuide\TheaterGuide\TheaterGuide\obj\Release\TheaterGuide.csprojResolveAssemblyReference.cache

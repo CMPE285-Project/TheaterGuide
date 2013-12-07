@@ -16,8 +16,11 @@
         <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
     </title>
     <link href="<%: Url.Content("~/favicon.ico") %>" rel="shortcut icon" type="image/x-icon" />
-    <script src="/Scripts/jquery-1.9.1.js" type="text/javascript"></script>
-    <script type="text/javascript" src="/Scripts/star.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../../Content/bootstrap/bootstrap.css" />
+    <script src="/Scripts/jquery-1.9.1.js"></script>
+    <script src="/Scripts/jquery-ui-1.8.20.js"></script>
+    <script src="/Scripts/helper.js" type="text/javascript"></script>
     <meta name="viewport" content="width=device-width" />
     <%: Styles.Render("~/Content/css") %>
     <%: Scripts.Render("~/bundles/modernizr") %>
@@ -26,7 +29,7 @@
     <div class="myNav-wraper">
         <div class="navbar navbar-inverse navbar-static-top my-navbar" role="navigation">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">Theather Guide</a>
+                <a class="navbar-brand" href="/" style="font-size:40px">Theater Guide</a>
             </div>
             <section class="navbar-collapse login" style="float: right; width: 300px">
                 <%: Html.Partial("_LoginPartial") %>
@@ -96,6 +99,7 @@
     </div>
 
     <%: Scripts.Render("~/bundles/jquery") %>
+    <%: Scripts.Render("~/bundles/jqueryui") %>
     <asp:ContentPlaceHolder ID="ScriptsSection" runat="server" />
 </body>
 </html>

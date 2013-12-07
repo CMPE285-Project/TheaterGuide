@@ -91,9 +91,10 @@ namespace TheaterGuide.Controllers
             return shows.OrderByDescending(s => s.ShowId);
         }
 
-        // Search by costomers via home page
+        // Search by costomers via show list page
         public ActionResult SearchResult(int theaterId = 0, string searchString = null, int movieId = 0, DateTime? date = null)
         {
+            ViewBag.TheaterLst = GetTheaterLst();
             return View(showSearch(theaterId, searchString, movieId, date));
         }
 

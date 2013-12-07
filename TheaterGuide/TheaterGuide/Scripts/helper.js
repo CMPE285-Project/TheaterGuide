@@ -1,4 +1,8 @@
 ﻿$(function () {
+    $('input[type="date"]').prop('type', 'text'); // prevent chrome calender
+    $("#Date").datepicker().attr('readonly', 'readonly');
+    $("#ReleaseDate").datepicker().attr('readonly', 'readonly');
+
     $.fn.stars = function () {
         return $(this).each(function () {
             // Get the value
@@ -12,5 +16,5 @@
         });
     };
 
-    $('span.stars').stars();
+    $('span.stars').stars();   
 });

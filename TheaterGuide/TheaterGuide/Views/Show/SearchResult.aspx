@@ -8,12 +8,25 @@
 
     <h1>Show List</h1>
 
+    <div style="padding-top: 1em; padding-bottom: 1em; text-align: center">
+        <% using (Html.BeginForm("SearchResult", "Show", FormMethod.Get))
+           { %>
+        <b>Choose Theater </b>
+        <%: Html.DropDownList("theaterId", (List<SelectListItem>)ViewBag.TheaterLst, "slectct one") %>
+        <b>Movie Name </b>
+        <%: Html.TextBox("SearchString")%>
+        <b>Date </b>
+        <%: Html.TextBox("Date")%>
+        <input type="submit" value="Search" />
+        <% } %>
+    </div>
+
     <table class="table table-bordered" style="margin-top: 20px">
         <tr>
             <th class="col-sm-2"></th>
-            <th class="col-sm-8 " style="font-size:20px; text-align :center"> Information
+            <th class="col-sm-8 " style="font-size: 20px; text-align: center">Information
             </th>
-            <th style="font-size:20px">Action
+            <th style="font-size: 20px">Action
             </th>
         </tr>
 
@@ -25,20 +38,21 @@
                 <br />
                 <%: Html.DisplayFor(modelItem => item.TheaterName) %>
             </td>
-            <td> <b>Movie Name:</b> <%: Html.DisplayFor(modelItem => item.MovieName) %>
+            <td><b>Movie Name:</b> <%: Html.DisplayFor(modelItem => item.MovieName) %>
                 <br />
-               <b> Address:</b> <%: Html.DisplayFor(modelItem => item.Address) %>, 
+                <b>Address:</b> <%: Html.DisplayFor(modelItem => item.Address) %>, 
                         <%: Html.DisplayFor(modelItem => item.City) %>
                 <br />
                 <b>Price:</b> <%: Html.DisplayFor(modelItem => item.Price) %>
                 <br />
-               <b> Time:</b> <%: Html.DisplayFor(modelItem => item.BeginTime) %>, 
+                <b>Time:</b> <%: Html.DisplayFor(modelItem => item.BeginTime) %>, 
                 <%: Html.DisplayFor(modelItem => item.Date) %>
                 <br />
-              <b>  Available Seats:</b> <%: Html.DisplayFor(modelItem => item.AvailableSeat) %>
+                <b>Available Seats:</b> <%: Html.DisplayFor(modelItem => item.AvailableSeat) %>
                 <br />
-                <%if(item.Discount < 1) {%>
-                <span style="color:#ce2e2e">Discount: <%: Html.DisplayFor(modelItem => item.Discount)%></span>
+                <%if (item.Discount < 1)
+                  {%>
+                <span style="color: #ce2e2e">Discount: <%: Html.DisplayFor(modelItem => item.Discount)%></span>
                 <%} %>
             </td>
             <td>
@@ -52,7 +66,7 @@
                 <% }
                    } %>
                 <br />
-                <a href="<%:item.Address%>,<%:item.City %>,<%:item.State %>" data-toggle="modal" data-target="#myModal" class="myMap mapit"  >Map It</a>
+                <a href="<%:item.Address%>,<%:item.City %>,<%:item.State %>" data-toggle="modal" data-target="#myModal" class="myMap mapit">Map It</a>
             </td>
         </tr>
         <% } %>
