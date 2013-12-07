@@ -20,11 +20,11 @@
     <img src="http://placehold.it/100x150" class="functionPicture" />
     <div class="functionDescription">
         <b>Name:</b> <%: item.Name %><br />
-        <b>Rating:</b> <%: item.Rating %><br />
         <b>Run Time (mins):</b> <%: item.RunTime %><br />
         <b>Release Date:</b> <%: item.ReleaseDate.ToShortDateString() %><br />
         <b>Description:</b> <%: item.Description %><br />
         <b>Director:</b> <%: item.Director %><br />
+        <span class="stars"><%= item.Rating %></span>
         <%: Html.ActionLink("Go to Reserve",  "SearchResult", "Show", new { theaterId=0, searchString=String.Empty, movieId=item.MovieId }, null) %>
     </div>
     <% } %>

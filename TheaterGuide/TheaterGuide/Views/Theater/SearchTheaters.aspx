@@ -5,7 +5,6 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
     <h1>Search Theater</h1>
     <div class="functionPicture">
      <% using (Html.BeginForm())
@@ -49,8 +48,7 @@
                <br />
                <b> Price Range:</b> <%: Html.DisplayFor(modelItem => item.PriceRange) %>
                <br />
-               <b> Rating:</b> <%: Html.DisplayFor(modelItem => item.Rating) %>
-               <br />
+               <span class="stars"><%= item.Rating %></span>
                <%: Html.DisplayFor(modelItem => item.WebSite) %>
             </td>
             <td>
