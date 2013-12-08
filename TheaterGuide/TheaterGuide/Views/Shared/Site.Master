@@ -36,10 +36,10 @@
             </section>
 
             <div style="float: right; margin-top: 5px">
-                <a href="https://twitter.com/share" class="twitter-share-button" data-text="Come and find out more movies and reserve a seat!" data-size="medium"></a>
+                <a href="https://twitter.com/share" class="twitter-share-button" data-text="Come and find out more movies and reserve a seat!" data-url="http://theaterguide.azurewebsites.net/" data-size="medium"></a>
                 <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
 
-                <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+                <div class="g-plus" data-action="share" data-annotation="bubble" data-href="http://theaterguide.azurewebsites.net/"></div>
 
                 <script type="text/javascript">
                     (function () {
