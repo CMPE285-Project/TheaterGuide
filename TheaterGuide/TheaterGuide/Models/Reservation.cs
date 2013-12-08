@@ -32,7 +32,7 @@ namespace TheaterGuide.Models
         public DateTime Date { get; set; }
         //[Required]
         [Display(Name = "Number of Seat")]
-        [RegularExpression("^[1-9]", ErrorMessage = "Qty should be positive number.")]
+        [RegularExpression("[1-9][0-9]*", ErrorMessage = "Qty should be positive number.")]
         public int NumberOfSeats { get; set; }
         //[Required]
         [DisplayFormat(DataFormatString = "{0:C}")]
