@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage" %>
 
 <asp:Content ID="indexTitle" ContentPlaceHolderID="TitleContent" runat="server">
-    Home Page - Theater Guide
+    Theater Guide
 </asp:Content>
 
 <asp:Content ID="indexContent" ContentPlaceHolderID="IndexContent" runat="server">

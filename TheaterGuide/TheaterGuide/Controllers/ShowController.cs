@@ -13,44 +13,9 @@ namespace TheaterGuide.Controllers
     public class ShowController : Controller
     {
         private UsersContext db = new UsersContext();
+        private LstController list = new LstController();        
 
-        public List<SelectListItem> GetTheaterLst()
-        {
-            List<SelectListItem> lst = new List<SelectListItem>();
-            var theaters = from m in db.Theaters
-                           orderby m.Name, m.City
-                           select m;
-
-            foreach (var t in theaters)
-            {
-                lst.Add(new SelectListItem()
-                {
-                    Text = t.Name + "@" + t.City + "#" + t.TheaterId,
-                    Value = t.TheaterId.ToString()
-                });
-            }
-            return lst;
-        }
-
-        public List<SelectListItem> GetMovieLst()
-        {
-            List<SelectListItem> lst = new List<SelectListItem>();
-            var movies = from m in db.Movies
-                           orderby m.Name
-                           select m;
-
-            foreach (var m in movies)
-            {
-                lst.Add(new SelectListItem()
-                {
-                    Text = m.Name + "#" + m.MovieId,
-                    Value = m.MovieId.ToString()
-                });
-            }
-            return lst;
-        }
-
-        private IQueryable<SearchViewModel> showSearch(int theaterId = 0, string searchString = null, int movieId=0, DateTime? date = null)
+        private IQueryable<SearchViewModel> showSearch(int theaterId = 0, string searchString = null, int movieId = 0, DateTime? date = null, string theater = null, string city = null)
         {
             var shows = from s in db.Shows
                          join m in db.Movies on s.MovieId equals m.MovieId
@@ -88,14 +53,24 @@ namespace TheaterGuide.Controllers
             {
                 shows = shows.Where(s => s.Date.Equals((DateTime)date));
             }
+            if (!String.IsNullOrEmpty(theater))
+            {
+                shows = shows.Where(s => s.TheaterName.Equals(theater));
+            }
+            if (!String.IsNullOrEmpty(city))
+            {
+                shows = shows.Where(s => s.City.Equals(city));
+            }
+
             return shows.OrderByDescending(s => s.ShowId);
         }
 
         // Search by costomers via show list page
-        public ActionResult SearchResult(int theaterId = 0, string searchString = null, int movieId = 0, DateTime? date = null)
+        public ActionResult SearchResult(int theaterId = 0, string theater = null, string city = null, string searchString = null, int movieId = 0, DateTime? date = null)
         {
-            ViewBag.TheaterLst = GetTheaterLst();
-            return View(showSearch(theaterId, searchString, movieId, date));
+            ViewBag.TheaterLst = list.GetDistinctTheaterLst();
+            ViewBag.CityLst = list.GetDistinctCityLst();
+            return View(showSearch(theaterId, searchString, movieId, date, theater, city));
         }
 
         //
@@ -103,7 +78,7 @@ namespace TheaterGuide.Controllers
         [Authorize(Roles = "admin")]
         public ActionResult Shows(int id = 0, string searchString = null)
         {
-            ViewBag.TheaterLst = GetTheaterLst();
+            ViewBag.TheaterLst = list.GetTheaterLst();
             return View(showSearch(id, searchString));
         }
 
@@ -125,8 +100,8 @@ namespace TheaterGuide.Controllers
         [Authorize(Roles = "admin")]
         public ActionResult Create()
         {
-            ViewBag.TheaterLst = GetTheaterLst();
-            ViewBag.MovieLst = GetMovieLst();
+            ViewBag.TheaterLst = list.GetTheaterLst();
+            ViewBag.MovieLst = list.GetMovieLst();
             return View();
         }
 

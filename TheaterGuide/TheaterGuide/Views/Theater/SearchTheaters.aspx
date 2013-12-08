@@ -7,23 +7,22 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Search Theater</h1>
     <div style="padding-top: 1em; padding-bottom: 1em; text-align: center">
-     <% using (Html.BeginForm())
-       { %>
-     <b>Theater Name </b>
+        <% using (Html.BeginForm())
+           { %>
+        <b>City </b>
+        <%: Html.DropDownList("city", (List<SelectListItem>)ViewBag.CityLst, "Any") %>
+        <b>Theater Name </b>
         <%: Html.TextBox("SearchString") %>
-    
-    <input type="submit" value="Search" />
-<% } %> 
+
+        <input type="submit" value="Search" />
+        <% } %>
     </div>
-    <table class="table table-bordered" style="margin-top:20px">
+    <table class="table table-bordered" style="margin-top: 20px">
         <tr>
-            <th class="col-sm-2">
+            <th class="col-sm-2"></th>
+            <th class="col-sm-8">Information
             </th>
-            <th class="col-sm-8">
-                Information
-            </th>
-            <th>
-                Action
+            <th>Action
             </th>
         </tr>
 
@@ -36,23 +35,23 @@
                 <%: Html.DisplayFor(modelItem => item.Name) %>
             </td>
             <td>
-            
-              <b> Address:</b> <%: Html.DisplayFor(modelItem => item.Address) %>, 
+
+                <b>Address:</b> <%: Html.DisplayFor(modelItem => item.Address) %>, 
                         <%: Html.DisplayFor(modelItem => item.City) %>,
                         <%: Html.DisplayFor(modelItem => item.State) %>,
                         <%: Html.DisplayFor(modelItem => item.Zip) %>
-               <br />
-               <b> Phone:</b> <%: Html.DisplayFor(modelItem => item.Phone) %>
-               <br />
-               <b> Hours:</b> <%: Html.DisplayFor(modelItem => item.Hours) %>
-               <br />
-               <b> Price Range:</b> <%: Html.DisplayFor(modelItem => item.PriceRange) %>
-               <br />
-               <span class="stars"><%= item.Rating %></span>
-               <%: Html.DisplayFor(modelItem => item.WebSite) %>
+                <br />
+                <b>Phone:</b> <%: Html.DisplayFor(modelItem => item.Phone) %>
+                <br />
+                <b>Hours:</b> <%: Html.DisplayFor(modelItem => item.Hours) %>
+                <br />
+                <b>Price Range:</b> <%: Html.DisplayFor(modelItem => item.PriceRange) %>
+                <br />
+                <span class="stars"><%= item.Rating %></span>
+                <%: Html.DisplayFor(modelItem => item.WebSite) %>
             </td>
             <td>
-                <%: Html.ActionLink("Show Movies",  "SearchResult", "Show", new { theaterId=item.TheaterId }, null) %>
+                <%: Html.ActionLink("Go to Reserve",  "SearchResult", "Show", new { theaterId=item.TheaterId }, null) %>
                 <br />
                 <br />
                 <a href="<%:item.Address%>,<%:item.City %>,<%:item.State %>" data-toggle="modal" data-target="#myModal" class="myMap">Map It</a>
@@ -61,25 +60,28 @@
         <% } %>
     </table>
 
-     <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-            <div id="map-canvas" style="width:500px; height:500px;"></div>
-            <br />
-            <div id="directionsPanel"></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="map-canvas" style="width: 500px; height: 500px;"></div>
+                    <br />
+                    <div id="directionsPanel"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 
 </asp:Content>
 
@@ -87,7 +89,7 @@
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="ScriptsSection" runat="server">
-     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     <script>
         var targetAddress = null;
         var rendererOptions = {
@@ -142,5 +144,5 @@
         $("a").click(function () {
             targetAddress = $(this).attr('href');
         });
-</script>
+    </script>
 </asp:Content>

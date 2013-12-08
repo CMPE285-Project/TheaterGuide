@@ -6,13 +6,15 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h1>Show List</h1>
+    <h1>Search Show</h1>
 
     <div style="padding-top: 1em; padding-bottom: 1em; text-align: center">
         <% using (Html.BeginForm("SearchResult", "Show", FormMethod.Get))
            { %>
-        <b>Choose Theater </b>
-        <%: Html.DropDownList("theaterId", (List<SelectListItem>)ViewBag.TheaterLst, "slectct one") %>
+        <b>City </b>
+        <%: Html.DropDownList("city", (List<SelectListItem>)ViewBag.CityLst, "Any") %>
+        <b>Theater </b>
+        <%: Html.DropDownList("theater", (List<SelectListItem>)ViewBag.TheaterLst, "Any") %>
         <b>Movie Name </b>
         <%: Html.TextBox("SearchString")%>
         <b>Date </b>
@@ -24,9 +26,9 @@
     <table class="table table-bordered" style="margin-top: 20px">
         <tr>
             <th class="col-sm-2"></th>
-            <th class="col-sm-8 " style="font-size: 20px; text-align: center">Information
+            <th class="col-sm-8">Information
             </th>
-            <th style="font-size: 20px">Action
+            <th>Action
             </th>
         </tr>
 
@@ -61,12 +63,12 @@
                 <% using (Html.BeginForm("Create", "Reservation", new { id = item.ShowId }, FormMethod.Get))
                    { %>
                  Qty: 
-                 <%=Html.TextBox("Seats", "", new { style = "width:30px" })%>
+                 <%=Html.TextBox("Seats", "", new { style = "width:30px", @pattern = "[1-9][0-9]*", @title = "Positive interger only." })%>
                 <input class="button" type="submit" value="Reserve" />
                 <% }
                    } %>
                 <br />
-                <a href="<%:item.Address%>,<%:item.City %>,<%:item.State %>" data-toggle="modal" data-target="#myModal" class="myMap mapit">Map It</a>
+                <a href="<%:item.Address%>,<%:item.City %>,<%:item.State %>" data-toggle="modal" data-target="#myModal" class="myMap">Map It</a>
             </td>
         </tr>
         <% } %>

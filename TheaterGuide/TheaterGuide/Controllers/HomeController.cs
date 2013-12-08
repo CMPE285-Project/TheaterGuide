@@ -12,23 +12,16 @@ namespace TheaterGuide.Controllers
     {
         public ActionResult Index()
         {
-            ShowController sc = new ShowController();
-            ViewBag.TheaterLst = sc.GetTheaterLst();
-
             return View();
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your app description page.";
-
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }

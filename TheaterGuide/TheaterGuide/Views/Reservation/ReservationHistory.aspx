@@ -51,7 +51,7 @@
             <%= item.SubmitDate.ToString("MMMM dd, yyyy") %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.SubmitTime) %>
+            <%= item.SubmitTime.Substring(0,8) %>
         </td>
         <td>
             <% if(item.Status.Equals("V")) { %>

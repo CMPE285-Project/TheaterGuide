@@ -15,11 +15,17 @@ namespace TheaterGuide.Controllers
     public class TheaterController : Controller
     {
         private UsersContext db = new UsersContext();
+        private LstController list = new LstController();        
 
-        private IQueryable<TheaterModels> search(string searchString = null)
+        private IQueryable<TheaterModels> search(string searchString = null, string city = null)
         {
             var theaters = from m in db.Theaters
                            select m;
+
+            if (!String.IsNullOrEmpty(city))
+            {
+                theaters = theaters.Where(s => s.City.Equals(city));
+            }
 
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -31,15 +37,16 @@ namespace TheaterGuide.Controllers
 
         // search by admin
         [Authorize(Roles = "admin")]
-        public ActionResult Theaters(string searchString=null)
+        public ActionResult Theaters(string searchString = null)
         {
             return View(search(searchString));
         }
 
         // search by customers
-        public ActionResult SearchTheaters(string searchString = null)
+        public ActionResult SearchTheaters(string searchString = null, string city = null)
         {
-            return View(search(searchString));
+            ViewBag.CityLst = list.GetDistinctCityLst();
+            return View(search(searchString, city));
         }
 
         //

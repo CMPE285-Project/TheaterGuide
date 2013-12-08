@@ -3,6 +3,18 @@
     $("#Date").datepicker().attr('readonly', 'readonly');
     $("#ReleaseDate").datepicker().attr('readonly', 'readonly');
 
+    $("#Date").keydown(function (e) {
+        if (e.which == 46 || e.which == 8) {
+            //Delete and backspace clear text 
+            $(this).val(''); //Clear text
+            $(this).datepicker("hide"); //Hide the datepicker calendar if displayed
+            $(this).blur(); //aka "unfocus"
+        }
+
+        //Prevent user from manually entering in a date - have to use the datepicker box
+        e.preventDefault();
+    });
+
     $.fn.stars = function () {
         return $(this).each(function () {
             // Get the value
